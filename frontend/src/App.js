@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
+import { Navigation } from './Components/NavigationBar/Navigation';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+import React, { PureComponent } from 'react'
+
+export default class App extends PureComponent {
+  constructor(props) {
+    super(props)
+  
+    this.state = {
+      home:"nav_text",
+      services:"nav_text",
+      aboutus:"nav_text",
+      blog:"nav_text"
+    }
+  }
+
+  navhander(event){
+    
+    this.setState({
+      ...this.state,
+      home:"nav_text",
+      services:"nav_text",
+      aboutus:"nav_text",
+      blog:"nav_text"
+    });
+    const data=event.target.name;
+    console.log(data);
+    this.setState({...this.state,data:"nav_hilighted"})
+  }
+
+  render() {
+    return (
+      <Navigation data={this.state} click={this.navhander}/>
+    )
+  }
 }
 
-export default App;
+
+
