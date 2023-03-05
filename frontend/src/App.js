@@ -4,6 +4,7 @@ import { Navigation } from './Components/NavigationBar/Navigation';
 import React, { PureComponent } from 'react';
 import LoginAndSignup from './Components/LoginAndSignup/LoginAndSignup';
 import Footer from './Components/Footer/Footer';
+import Dashboard from './Components/Dashboard/Dashboard';
 
 export default class App extends PureComponent {
   constructor(props) {
@@ -112,6 +113,7 @@ export default class App extends PureComponent {
       <>
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
+        <Dashboard/>
         <Footer data={this.state.footerLinks}/>
       </>
     )
