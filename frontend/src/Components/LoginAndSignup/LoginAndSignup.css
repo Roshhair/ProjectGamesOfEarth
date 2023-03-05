@@ -1,36 +1,16 @@
-.model {
-    position: fixed;
-    width: 540px;
-    z-index: 1040;
-    top: 25vw;
-    left: 25vw;
-    border: 1px solid #e5e5e5;
-    background-color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-}
-
-.backdrop {
-    position: fixed;
-    z-index: 1040;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #000;
-    opacity: 0.5;
-}
-
 .form {
     top: 6vw;
     left: 32.5vw;
     position: absolute;
     height: auto;
     color: white;
-    background-color: rgba(0, 0, 0);
+    background-color: rgba(0, 0, 0,0.5);
+    /* opacity: 100; */
     padding: 3vw;
     /* border-radius: 2vw; */
     align-items: center;
+    border: black solid 0.1vw;
+    z-index: 1005;
 }
 
 .col-1 {
@@ -135,7 +115,17 @@
     left:0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0);
-    z-index: 10000;
+    background: rgb(0, 0, 0);
+    z-index: 1001;
     opacity: 0.5;
+}
+.cross{
+    /* content: "\274C"; */
+    z-index: 1002;
+    opacity: 100%;
+    float: right;
+}
+.cross-image{
+    height: 100%;
+    width:1vw;
 }

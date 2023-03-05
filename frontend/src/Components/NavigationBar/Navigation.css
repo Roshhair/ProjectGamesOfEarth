@@ -5,7 +5,7 @@
     height: 5vw;
     left: 0vw;
     background: rgba(29, 29, 29, 0.91875);
-    z-index: 9999;
+    z-index: 1000;
   }
 .nav_li{
     list-style-type: none;

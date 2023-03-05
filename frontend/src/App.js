@@ -45,13 +45,14 @@ export default class App extends PureComponent {
     }
   }
 
-  toggleShow(){
-    this.setState({...this.state,show:true});
+  setShowTrue(){
+      this.setState({...this.state,show:true});
   }
-
   setShowFalse(){
     this.setState({...this.state,show:false});
-  }
+    // console.log(false)
+}
+  
 
   navhander(event) {
 
@@ -70,13 +71,8 @@ export default class App extends PureComponent {
   render() {
     return (
       <>
-        
-        <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.toggleShow()}} />
+        <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
-        
-        
-        
-        
       </>
     )
   }

@@ -1,5 +1,4 @@
 import React from 'react'
-import Modal from 'react-overlays/Modal'
 import './LoginAndSignup.css'
 
 export const Signin = (props) => {
