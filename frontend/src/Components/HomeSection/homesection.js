@@ -4,7 +4,7 @@ import './homesection.css';
 function HomeSection() {
         return (
           <div className='home-container'>
-            <video src='/video/video.mp4' autoPlay loop muted />
+            <img src='/video/ball-2680595_1280.jpg' />
             <h1>GAMES OF EARTH</h1>
             <div >
                <button className='btn' >

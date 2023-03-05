@@ -1,0 +1,31 @@
+.footer{    
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    background: rgba(14, 14, 14, 0.919);
+}
+.footer_list{
+    list-style: none;
+    overflow: hidden;
+    margin:0;
+    padding: 0;
+    text-align: center;
+}
+.footer_list_items{
+    margin: 2vw 2vw 2vw 2vw ;
+    display: inline-block;
+    color: white;
+    /* text-decoration: none; */
+}
+.footer_list_links{
+    text-decoration: none;
+    color: white;
+}
+.footer_span{
+    font-size: 1.2vw;
+    font-weight: 500;
+}
+
+.footer_list_links:hover{
+    text-decoration: underline;
+}

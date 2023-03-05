@@ -18,16 +18,16 @@ export default class LoginAndSignup extends Component {
 
         return this.props.show &&
             (<>
-                <div className='background'  onClick={this.props.setShowFalse}>
+                <div className='ls-background'  onClick={this.props.setShowFalse}>
                 </div>
-                <div className='form col-3' >
-                    <span className='cross' onClick={this.props.setShowFalse}>
-                        <img className='cross-image' src={require('../Images/cross.png')} alt='Cross'/>
+                <div className='ls-form col-3' >
+                    <span className='ls-cross' onClick={this.props.setShowFalse}>
+                        <img className='ls-cross-image' src={require('../Images/cross.png')} alt='Cross'/>
                     </span>
                     <br />
                     <div>
-                        <button className='topicbutton' onClick={() => { this.setState({ isSignup: true }) }}>Sign In</button>
-                        <button className='topicbutton' onClick={() => { this.setState({ isSignup: false }) }}>Sign Up</button>
+                        <button className='ls-topic-button' onClick={() => { this.setState({ isSignup: true }) }}>Sign In</button>
+                        <button className='ls-topic-button' onClick={() => { this.setState({ isSignup: false }) }}>Sign Up</button>
                     </div>
                     <hr />
                     {this.state.isSignup ? <Signin /> : <Signup />}

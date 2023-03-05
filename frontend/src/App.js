@@ -4,6 +4,7 @@ import { Navigation } from './Components/NavigationBar/Navigation';
 import React, { PureComponent } from 'react';
 import LoginAndSignup from './Components/LoginAndSignup/LoginAndSignup';
 import HomeSection from './Components/HomeSection/homesection';
+import Footer from './Components/Footer/Footer';
 
 export default class App extends PureComponent {
   constructor(props) {
@@ -16,23 +17,61 @@ export default class App extends PureComponent {
       navbarLinks: [{
         id: 1,
         name: "About Us",
-        css:'nav_text text_only'
+        css:'nav_a nav_text_only nav_li_a_text'
       },
       {
         id: 2,
         name: "Blog",
-        css:'nav_text text_only'
+        css:'nav_a nav_text_only nav_li_a_text'
       },
       {
         id: 3,
         name: "Services",
-        css:'nav_text text_only'
+        css:'nav_a nav_text_only nav_li_a_text'
       },
       {
         id: 4,
         name: "Home",
-        css:'nav_text text_only'
+        css:'nav_a nav_text_only nav_li_a_text'
       }
+      ],
+      footerLinks:[
+        {
+          name:"Terms",
+          id:1,
+          licss:"footer_list_items",
+          acss:"footer_list_links"
+        },
+        {
+          name:"Privacy",
+          id:2,
+          licss:"footer_list_items",
+          acss:"footer_list_links"
+        },
+        {
+          name:"Security",
+          id:3,
+          licss:"footer_list_items",
+          acss:"footer_list_links"
+        },
+        {
+          name:"Docs",
+          id:4,
+          licss:"footer_list_items",
+          acss:"footer_list_links"
+        },
+        {
+          name:"Blog",
+          id:5,
+          licss:"footer_list_items",
+          acss:"footer_list_links"
+        },
+        {
+          name:"About Us",
+          id:6,
+          licss:"footer_list_items",
+          acss:"footer_list_links"
+        },
       ]
     }
   }
@@ -75,10 +114,7 @@ export default class App extends PureComponent {
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.toggleShow()}} />
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
         <HomeSection />
-        
-        
-        
-        
+        <Footer data={this.state.footerLinks}/>
       </>
     )
   }

@@ -1,4 +1,4 @@
-.form {
+.ls-form {
     top: 6vw;
     left: 32.5vw;
     position: absolute;
@@ -13,81 +13,25 @@
     z-index: 1005;
 }
 
-.col-1 {
-    width: 8.33%;
-}
-
-.col-2 {
-    width: 16.66%;
-}
-
 .col-3 {
     width: 25%;
 }
 
-.col-4 {
-    width: 33.33%;
-}
-
-.col-5 {
-    width: 41.66%;
-}
-
-.col-6 {
-    width: 50%;
-}
-
-.col-7 {
-    width: 58.33%;
-}
-
-.col-8 {
-    width: 66.66%;
-}
-
-.col-9 {
-    width: 75%;
-}
-
-.col-10 {
-    width: 83.33%;
-}
-
-.col-11 {
-    width: 91.66%;
-}
-
-.col-12 {
-    width: 100%;
-}
-
-.row {
-    height: 25vw;
-    position: absolute;
-
-}
-
-.label-text {
-    position: relative;
-    font-size: 1.8vw;
-    /* margin: 2vw 5vw; */
-}
-
-.input-label {
-    /* margin: 0vw 5vw; */
+.ls-input-label {
+    margin: 1vw 0vw;
     position: relative;
     width: 25vw;
     height: 3vw;
-    font-size: 1.6vw;
+    font-size: 1.2vw;
     border-radius: 1vw;
     border: none;
     padding-left: 1vw;
 }
 
-.login-button {
+.ls-login-button {
     display: block;
     text-align: center;
-    margin: 2vw 0vw 0vw 9vw;
+    margin: 1vw 0vw 0vw 9vw;
     padding: 0.5vw 1.5vw;
     font-size: 1.2vw;
     background: none;
@@ -95,11 +39,7 @@
     border: white 0.2vw solid;
 }
 
-.form-div{
-    margin: 5vw;
-}
-
-.topicbutton{
+.ls-topic-button{
     display: inline;
     text-align: center;
     margin: 0vw 2vw 0vw 2.8vw;
@@ -109,7 +49,7 @@
     color: aliceblue;
     border: none;
 }
-.background{
+.ls-background{
     position: fixed;
     top:0;
     left:0;
@@ -119,13 +59,22 @@
     z-index: 1001;
     opacity: 0.5;
 }
-.cross{
+.ls-cross{
     /* content: "\274C"; */
     z-index: 1002;
     opacity: 100%;
     float: right;
 }
-.cross-image{
+.ls-cross-image{
     height: 100%;
     width:1vw;
+}
+.ls-login-button:hover{
+    background-color: white;
+    color: black;
+}
+.ls-topic-button:hover{
+    /* border: 0.1vw white solid;
+     */
+     color:gray;
 }

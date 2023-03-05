@@ -16,14 +16,14 @@ export const Navigation = (props) => {
     return (
         <>
             <div>
-                <nav className='innerdivnav'>
+                <nav className='nav_innerdivnav'>
                     <div>
                         <ul className='nav_li'>
-                            <li ><a href='/' className='nav_head text_only'>GAMESOFEARTH</a></li>
-                            <li className='nav_text'><button onClick={toggleShow} >Login</button></li>
+                            <li ><a href='/' className='nav_head nav_text_only'>GAMESOFEARTH</a></li>
+                            <li className='nav_a'><button className='nav_li_button' onClick={toggleShow} >Login</button></li>
 
                             {!isLogined && navbarLinks.map((data) => {
-                                return <li key={data.id}><a href='/' className={data.css} >{data.name}</a></li>
+                                return <li key={data.id}><a href={`/${data.name}`} className={data.css} >{data.name}</a></li>
                             })}
                         </ul>
                     </div>
