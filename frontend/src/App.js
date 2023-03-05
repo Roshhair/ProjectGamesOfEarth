@@ -3,6 +3,7 @@ import './App.css';
 import { Navigation } from './Components/NavigationBar/Navigation';
 import React, { PureComponent } from 'react';
 import LoginAndSignup from './Components/LoginAndSignup/LoginAndSignup';
+import HomeSection from './Components/HomeSection/homesection';
 
 export default class App extends PureComponent {
   constructor(props) {
@@ -45,14 +46,13 @@ export default class App extends PureComponent {
     }
   }
 
-  setShowTrue(){
-      this.setState({...this.state,show:true});
+  toggleShow(){
+    this.setState({...this.state,show:true});
   }
+
   setShowFalse(){
     this.setState({...this.state,show:false});
-    // console.log(false)
-}
-  
+  }
 
   navhander(event) {
 
@@ -71,8 +71,14 @@ export default class App extends PureComponent {
   render() {
     return (
       <>
-        <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
+        
+        <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.toggleShow()}} />
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
+        <HomeSection />
+        
+        
+        
+        
       </>
     )
   }
