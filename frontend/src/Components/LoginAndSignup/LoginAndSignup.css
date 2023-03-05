@@ -1,0 +1,141 @@
+.model {
+    position: fixed;
+    width: 540px;
+    z-index: 1040;
+    top: 25vw;
+    left: 25vw;
+    border: 1px solid #e5e5e5;
+    background-color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+}
+
+.backdrop {
+    position: fixed;
+    z-index: 1040;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    opacity: 0.5;
+}
+
+.form {
+    top: 6vw;
+    left: 32.5vw;
+    position: absolute;
+    height: auto;
+    color: white;
+    background-color: rgba(0, 0, 0);
+    padding: 3vw;
+    /* border-radius: 2vw; */
+    align-items: center;
+}
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
+    width: 100%;
+}
+
+.row {
+    height: 25vw;
+    position: absolute;
+
+}
+
+.label-text {
+    position: relative;
+    font-size: 1.8vw;
+    /* margin: 2vw 5vw; */
+}
+
+.input-label {
+    /* margin: 0vw 5vw; */
+    position: relative;
+    width: 25vw;
+    height: 3vw;
+    font-size: 1.6vw;
+    border-radius: 1vw;
+    border: none;
+    padding-left: 1vw;
+}
+
+.login-button {
+    display: block;
+    text-align: center;
+    margin: 2vw 0vw 0vw 9vw;
+    padding: 0.5vw 1.5vw;
+    font-size: 1.2vw;
+    background: none;
+    color: aliceblue;
+    border: white 0.2vw solid;
+}
+
+.form-div{
+    margin: 5vw;
+}
+
+.topicbutton{
+    display: inline;
+    text-align: center;
+    margin: 0vw 2vw 0vw 2.8vw;
+    /* padding: 0.5vw 1.5vw; */
+    font-size: 1.8vw;
+    background: none;
+    color: aliceblue;
+    border: none;
+}
+.background{
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0);
+    z-index: 10000;
+    opacity: 0.5;
+}
