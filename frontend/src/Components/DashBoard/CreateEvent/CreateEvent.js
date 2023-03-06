@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { AddFeatures } from './AddFeatures'
+import { AddSportsDetails } from './AddSportsDetails'
 import './CreateEvent.css'
 import { NameSportsAndType } from './NameSportsAndType'
 
@@ -14,7 +16,9 @@ export default class CreateEvent extends Component {
                     <div className='createevent_text'>Create Event</div>
                     <hr />
                     <div>
-                        <NameSportsAndType/>
+                        {/* <NameSportsAndType/> */}
+                        {/* <AddFeatures/> */}
+                        <AddSportsDetails/>
                     </div>
                 </div>
             </div>
