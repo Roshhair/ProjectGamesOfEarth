@@ -37,3 +37,8 @@
     width: 1vw;
     float: right;
 }
+.createevent_clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }

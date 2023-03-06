@@ -68,11 +68,15 @@
     clear: both;
     display: table;
   }
-
+.add_sports_details_float_left{
+    float: left;
+}
 /* ASD */
 .add_sports_details_teamsname_cotainer{
-    margin: 1vw;
-    width:21vw;
-    height:15vw;
+    margin: 0vw;
+    height: 20vw;
+    width: 100%;
+    padding: 0vw;
+    border-radius: 2vw;
     background-color: gray;
 }

@@ -16,10 +16,10 @@ export default class CreateEvent extends Component {
                     </div>
                     <div className='createevent_text'>Create Event</div>
                     <hr />
-                    <div>
+                    <div className='createevent_clearfix div_red'>
                         {/* <NameSportsAndType/> */}
                         {/* <AddFeatures/> */}
-                        {/* <AddSportsDetails/> */}
+                        <AddSportsDetails/>
                     </div>
                 </div>
             </div>
