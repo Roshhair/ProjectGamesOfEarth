@@ -16,6 +16,10 @@
 }
 .eventcard_div_margin{
     margin: 1vw;
+    /* font-size: 1vw; */
+}
+.eventcard_text{
+    font-size: 1.2vw;
 }
 .eventcard_color_white{
     color: rgb(164, 164, 164);
@@ -56,6 +60,9 @@
   }
 .eventcard_div_color{
     border: rgb(66, 66, 66) 0.1vw solid;
+}
+.eventcard_a{
+    text-decoration: none;
 }
 .col-1 {width: 8.33%;}
 .col-2 {width: 16.66%;}

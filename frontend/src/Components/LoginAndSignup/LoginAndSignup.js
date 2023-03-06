@@ -21,10 +21,9 @@ export default class LoginAndSignup extends Component {
                 <div className='ls-background' onClick={this.props.setShowFalse}>
                 </div>
                 <div className='ls-form col-4' >
-                    <span className='ls-cross' onClick={this.props.setShowFalse}>
+                    <div className='ls-cross' onClick={this.props.setShowFalse}>
                         <img className='ls-cross-image' src={require('../Images/cross.png')} alt='Cross' />
-                    </span>
-                    <br />
+                    </div>
                     <div>
                         <ul className='ls-list clearfix'>
                             <li className='ls-list-items float-left'>

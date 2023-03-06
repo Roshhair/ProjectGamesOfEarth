@@ -2,7 +2,7 @@
 .eventcardbox_div{
     border: blue 0.2vw solid;
     border-radius: 2vw;
-    padding: 2vw;
+    padding: 2vw 2vw 8vw 2vw;
     /* background-color: red ; */
 }
 .eventcardbox_list{

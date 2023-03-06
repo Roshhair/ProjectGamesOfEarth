@@ -61,11 +61,12 @@
     /* content: "\274C"; */
     z-index: 1002;
     opacity: 100%;
-    float: right;
+    /* float: right; */
 }
 .ls-cross-image{
     height: 100%;
     width:1vw;
+    float: right;
 }
 .ls-login-button:hover{
     background-color: white;
@@ -82,6 +83,7 @@
     list-style-position: inside;
     /* border: 1px solid rebeccapurple; */
     padding: 0%;
+    margin: 0;
 }
 .ls-list-items{
     display: inline-block;
