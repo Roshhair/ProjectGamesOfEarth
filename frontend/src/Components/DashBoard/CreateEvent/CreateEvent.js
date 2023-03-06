@@ -1,8 +1,9 @@
 import React, { Component } from 'react'
-import { AddFeatures } from './AddFeatures'
-import { AddSportsDetails } from './AddSportsDetails'
+import { AddFeatures } from './AddFeatures/AddFeatures'
+
+import { AddSportsDetails } from './AddSportsDetails/AddSportsDetails'
 import './CreateEvent.css'
-import { NameSportsAndType } from './NameSportsAndType'
+import { NameSportsAndType } from './NameSportsAndTypes/NameSportsAndType'
 
 export default class CreateEvent extends Component {
     render() {
@@ -18,7 +19,7 @@ export default class CreateEvent extends Component {
                     <div>
                         {/* <NameSportsAndType/> */}
                         {/* <AddFeatures/> */}
-                        <AddSportsDetails/>
+                        {/* <AddSportsDetails/> */}
                     </div>
                 </div>
             </div>

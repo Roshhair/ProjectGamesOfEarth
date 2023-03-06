@@ -22,10 +22,7 @@ export default class EventCardBox extends Component {
           {/* REd */}
           <EventCard />
           <EventCard />
-          <EventCard />
-          {/* <EventCard />
-          <EventCard />
-          <EventCard /> */}
+          
         </div>
       </div>
 
