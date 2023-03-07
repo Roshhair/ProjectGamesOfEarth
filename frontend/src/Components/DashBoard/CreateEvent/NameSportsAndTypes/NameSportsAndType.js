@@ -6,17 +6,17 @@ export const NameSportsAndType = () => {
         <>
             <div className='name_sports_and_types_div col-6'>
                 <div>
-                    <input type='text' placeholder='Event Name' className='name_sports_and_types_input' />
+                    <input type='text' placeholder='Event Name' name='eventName'  className='name_sports_and_types_input' />
                 </div>
                 <div>
-                    <select className='name_sports_and_types_input_select'>
-                        <option className='name_sports_and_types_input_options' selected disabled>Select Sport</option>
-                        <option className='name_sports_and_types_input_options'>Rushui</option>
+                    <select className='name_sports_and_types_input_select' defaultValue='select' name='sports'>
+                        <option className='name_sports_and_types_input_options'  disabled value='select'>Select Sport</option>
+                        <option className='name_sports_and_types_input_options' value="Rushui">Rushui</option>
                     </select>
                 </div>
                 <div >
                     <label className='name_sports_and_types_label' htmlFor='startdate'>Start Date</label>
-                    <input className='name_sports_and_types_input' id='startdate' type='date' />
+                    <input className='name_sports_and_types_input' id='startdate' type='date' name='startDate' />
                 </div>
             </div>
             <div className='name_sports_and_types_div div_red col-6'>
@@ -24,19 +24,19 @@ export const NameSportsAndType = () => {
                     <div className='name_sports_and_types_list_span'>Event Type</div>
                     <ul className='name_sports_and_types_list '>
                         <li className='name_sports_and_types_list_items'>
-                            <input type='radio' name='eventType' className='name_sports_and_types_radio' /><span className='name_sports_and_types_list_span'>Simple</span>
+                            <input type='radio' name='eventType' value='Simple' className='name_sports_and_types_radio' /><span className='name_sports_and_types_list_span'>Simple</span>
                         </li>
                         <li className='name_sports_and_types_list_items'>
-                            <input type='radio' name='eventType' className='name_sports_and_types_radio' /><span className='name_sports_and_types_list_span'>Auction</span>
+                            <input type='radio' name='eventType' value='Auction' className='name_sports_and_types_radio' /><span className='name_sports_and_types_list_span'>Auction</span>
                         </li>
                         <li className='name_sports_and_types_list_items'>
-                            <input type='radio' name='eventType' className='name_sports_and_types_radio' /><span className='name_sports_and_types_list_span'>Tournament</span>
+                            <input type='radio' name='eventType' value='Tournament' className='name_sports_and_types_radio' /><span className='name_sports_and_types_list_span'>Tournament</span>
                         </li>
                     </ul>
                 </div>
                 <div>
                     <label className='name_sports_and_types_label' htmlFor='enddate'>End Date</label>
-                    <input className='name_sports_and_types_input' id='enddate' type='date' />
+                    <input className='name_sports_and_types_input' name='endDate' id='enddate' type='date' />
                 </div>
             </div>
             <div className='div_red col-12 '>
