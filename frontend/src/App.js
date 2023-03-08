@@ -5,6 +5,7 @@ import React, { PureComponent } from 'react';
 import LoginAndSignup from './Components/LoginAndSignup/LoginAndSignup';
 import Footer from './Components/Footer/Footer';
 import DashBoard from './Components/DashBoard/DashBoard';
+import CreateEventPage from './Components/CreateEvent/CreateEventPage';
 
 
 export default class App extends PureComponent {
@@ -22,16 +23,11 @@ export default class App extends PureComponent {
       },
       {
         id: 2,
-        name: "Blog",
+        name: "Docs",
         css:'nav_a nav_text_only nav_li_a_text'
       },
       {
         id: 3,
-        name: "Services",
-        css:'nav_a nav_text_only nav_li_a_text'
-      },
-      {
-        id: 4,
         name: "Home",
         css:'nav_a nav_text_only nav_li_a_text'
       }
@@ -44,32 +40,14 @@ export default class App extends PureComponent {
           acss:"footer_list_links"
         },
         {
-          name:"Privacy",
+          name:"Docs",
           id:2,
           licss:"footer_list_items",
           acss:"footer_list_links"
         },
         {
-          name:"Security",
-          id:3,
-          licss:"footer_list_items",
-          acss:"footer_list_links"
-        },
-        {
-          name:"Docs",
-          id:4,
-          licss:"footer_list_items",
-          acss:"footer_list_links"
-        },
-        {
-          name:"Blog",
-          id:5,
-          licss:"footer_list_items",
-          acss:"footer_list_links"
-        },
-        {
           name:"About Us",
-          id:6,
+          id:3,
           licss:"footer_list_items",
           acss:"footer_list_links"
         },
@@ -114,7 +92,8 @@ export default class App extends PureComponent {
       <>
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
-        <DashBoard/>
+        {/* <DashBoard/> */}
+        <CreateEventPage/>
         <Footer data={this.state.footerLinks}/>
       </>
     )

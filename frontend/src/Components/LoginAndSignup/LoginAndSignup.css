@@ -24,7 +24,7 @@
     height: 3vw;
     font-size: 1.2vw;
     border-radius: 1vw;
-    border: none;
+    /* border: black; */
     padding-left: 1vw;
 }
 
@@ -104,4 +104,7 @@
     content: "";
     clear: both;
     display: table;
+}
+.ls-error{
+    border: red solid 0.3vw;
 }

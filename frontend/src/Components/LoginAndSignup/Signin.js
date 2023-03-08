@@ -1,21 +1,79 @@
-import React from 'react'
 import './LoginAndSignup.css'
+import React, { Component } from 'react'
 
-export const Signin = (props) => {
+export  class Signin extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+        emailID:"",
+        password:"",
+        emailError:"",
+        passError:"",
+        redirect:false
+      }
+    }
+    setValues(event){
+        //Catching the Event Name form name tag
+        const name=event.target.name;
+        //Catching the target value form name tag
+        const value=event.target.value;
+        // console.log(name);
+        //setting the value here in props
+        this.setState({[name]:value});
+    }
+    validateEmail(){
+        const text=this.state.emailID;
+        const email=/^[a-z A-Z 0-9]+[@][a-z]+[.][a-z]{2,3}$/
+        console.log(email.test(text))
+        if(email.test(text)){
+            this.setState({...this.state,emailError:""})
+        }
+        else{
+            this.setState({...this.state,emailError:"ls-error"})
+        }
+        
+    }
+    submitHandler(){
+        if(this.state.emailID!=="" && this.state.password!=="" && this.state.emailError==="" && this.state.passError===""){
+            //axios here
+            //setting rediection true
+        }
+        else{
+            alert("Email or Password is Wrong")
+            this.setState({
+                emailID:"",
+                password:"",
+                emailError:"",
+                passError:"",
+                redirect:false
+              });
+        }
+    }
+  render() {
+    //use navigate for two options of naivgation
+        /*
+        like 
+        if(this.state.navigate){
+            return <Navigate to='/'/>
+        }
+        return (.....form);
+        */
     return (
         <>
-            <div>
-                <div>
-                    <input type='text' id='email' name='emailID' className='ls-input-label' placeholder='Email' />
-                </div>
-                <div>
-                    <input type='password' id='password' name='password' className='ls-input-label' placeholder='Password' />
-                </div>
-                <div>
-                    <button className='ls-login-button'>Sign In</button>
-                </div>
+        <div>
+            <div className=''>
+                <input type='text' id='email' name='emailID' className={`ls-input-label`} placeholder='Email' value={this.state.username} onChange={(event)=>{this.setValues(event);this.validateEmail()}}/>
             </div>
+            <div>
+                <input type='password' id='password' name='password' className='ls-input-label' placeholder='Password' value={this.state.password} onChange={(event)=>{this.setValues(event)}}/>
+            </div>
+            <div>
+                <button className='ls-login-button' onClick={()=>{this.submitHandler()}}>Sign In</button>
+            </div>
+        </div>
 
-        </>
+    </>
     )
+  }
 }

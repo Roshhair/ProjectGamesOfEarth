@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CreateEvent from './CreateEvent/CreateEvent'
+// import CreateEvent from './CreateEvent/CreateEvent'
 
 import './DashBoard.css'
 import EventCardBox from './EventBox/EventCardBox'
@@ -9,7 +9,7 @@ export default class DashBoard extends Component {
     super(props)
   
     this.state = {
-      createEvent:false,
+      isAddEvent:false,
       events:[
         {
           eventName:"FootBall",
@@ -28,15 +28,6 @@ export default class DashBoard extends Component {
       ]
     }
   }
-    setCreateEventTrue(){
-      this.setState({...this.state,createEvent:true})
-    }
-    setCreateEventFalse(){
-      this.setState({...this.state,createEvent:false})
-    }
-    addAnEvent(eventONe){
-      this.setState({...this.state,events:[...this.state.events,]})
-    }
 
   render() {
     return (
@@ -44,10 +35,8 @@ export default class DashBoard extends Component {
       <div className='dashboard'>
         <p className='dash_headder'>Welcome {"Users"}</p>
         <hr className='dash_line'/>
-        
-        <EventCardBox events={this.state.events} setCreateEventTrue={()=>{this.setCreateEventTrue()}}/>
+        {this.state.isAddEvent?"data":<EventCardBox events={this.state.events}/>}
       </div>
-      {this.state.createEvent && <CreateEvent setCreateEventFalse={()=>{this.setCreateEventFalse()}}/>}
       </>
       
     )
