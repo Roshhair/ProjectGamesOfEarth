@@ -7,6 +7,7 @@ import Footer from './Components/Footer/Footer';
 import DashBoard from './Components/DashBoard/DashBoard';
 import CreateEventPage from './Components/CreateEvent/CreateEventPage';
 import TeamRegistration from './Components/TeamRegistration/TeamRegistration';
+import PlayerRegistration from './Components/PlayerRegistration/PlayerRegistration';
 
 
 export default class App extends PureComponent {
@@ -95,7 +96,8 @@ export default class App extends PureComponent {
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
         {/* <DashBoard/> */}
         {/* <CreateEventPage/> */}
-        <TeamRegistration/>
+        {/* <TeamRegistration/> */}
+        <PlayerRegistration/>
         <Footer data={this.state.footerLinks}/>
       </>
     )
