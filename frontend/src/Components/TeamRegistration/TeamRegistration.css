@@ -1,0 +1,88 @@
+
+.team_registration_container{
+    background-color: #4a4848;
+    padding: 2vw;
+}
+.team_registration_title{
+    text-align: center;
+    font-size: 2vw;
+    color: white;
+    margin: 2vw;
+}
+.team_registration_input{
+    width: 20vw;
+    height: 3vw;
+    font-size: 1.2vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    margin: 0vw 1vw 2vw 1vw;
+    color: black;
+}
+.team_registration_semi_title{
+    text-align: center;
+    font-size: 1.8vw;
+    color: white;
+}
+.team_registration_inline{
+    display: inline-block;
+}
+.team_registration_button{
+    padding: 0.5vw;
+    width: 10vw;
+    color: white;
+    background-color: transparent;
+    border: white 0.2vw solid;
+    font-size: 1.5vw;
+}
+.team_registration_margin_lwft{
+    margin-left: 6vw;
+}
+.team_registration_margin{
+    margin: 1vw;
+}
+.team_registration_padding{
+    padding: 2vw;
+}
+.team_registration_input_margin{
+    margin-left: 14vw;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+}
+.team_registration_div{
+    /* border: white 0.2vw solid; */
+    /* height: 35vw; */
+    padding: 1vw;
+}
+.team_registration_teams_div{
+    border: white 0.2vw solid;
+    height: 35vw;
+    border-radius: 2vw;
+    overflow: auto;
+    padding: 2vw;
+}
+.team_registration_team_card{
+    background-color: darkgrey;
+    padding: 0.6vw;
+    border-radius: 1vw;
+    margin: 0.3vw;
+    font-size:1vw;
+}
+.team_registration_text_center{
+    text-align: center;
+}
+.team_registration_team_card_button{
+    background-color: transparent;
+    color: white;
+    font-size: 1vw;
+    border: white 0.2vw solid;
+    border-radius: 0.5vw;
+    text-align: center;
+}
+.team_registration_button:hover{
+    background-color: white;
+    color: black;
+}
+.team_registration_team_card_button:hover{
+    background-color: white;
+    color: black;
+}

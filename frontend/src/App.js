@@ -6,6 +6,7 @@ import LoginAndSignup from './Components/LoginAndSignup/LoginAndSignup';
 import Footer from './Components/Footer/Footer';
 import DashBoard from './Components/DashBoard/DashBoard';
 import CreateEventPage from './Components/CreateEvent/CreateEventPage';
+import TeamRegistration from './Components/TeamRegistration/TeamRegistration';
 
 
 export default class App extends PureComponent {
@@ -93,7 +94,8 @@ export default class App extends PureComponent {
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
         {/* <DashBoard/> */}
-        <CreateEventPage/>
+        {/* <CreateEventPage/> */}
+        <TeamRegistration/>
         <Footer data={this.state.footerLinks}/>
       </>
     )
