@@ -48,3 +48,7 @@
 .player_registration_hr{
     margin: 2vw 0vw;
 }
+.player_registration_button:hover{
+    color: black;
+    background-color: white;
+}

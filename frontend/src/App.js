@@ -8,6 +8,7 @@ import DashBoard from './Components/DashBoard/DashBoard';
 import CreateEventPage from './Components/CreateEvent/CreateEventPage';
 import TeamRegistration from './Components/TeamRegistration/TeamRegistration';
 import PlayerRegistration from './Components/PlayerRegistration/PlayerRegistration';
+import MatchList from './Components/MatchList/MatchList';
 
 
 export default class App extends PureComponent {
@@ -97,7 +98,8 @@ export default class App extends PureComponent {
         {/* <DashBoard/> */}
         {/* <CreateEventPage/> */}
         {/* <TeamRegistration/> */}
-        <PlayerRegistration/>
+        {/* <PlayerRegistration/> */}
+        <MatchList/>
         <Footer data={this.state.footerLinks}/>
       </>
     )
