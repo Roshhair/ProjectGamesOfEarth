@@ -1,0 +1,42 @@
+.budget_estimation{
+    padding: 2vw;
+    background-color: rgb(63, 63, 63);
+}
+.budget_estimation_title{
+    text-align: center;
+    font-size: 2vw;
+    color: white;
+}
+.budget_estimation_input{
+    width: 20vw;
+    height: 3vw;
+    font-size: 1.2vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    margin: 0vw 1vw 2vw 1vw;
+    color: black;
+}
+.budget_estimation_button{
+    padding: 0.5vw;
+    color: white;
+    background-color: transparent;
+    border: white 0.2vw solid;
+    font-size: 1.5vw;
+}
+.budget_estimation_center{
+    text-align: center;
+}
+.budget_estimation_items{
+    border: white 0.2vw solid;
+    padding: 2vw;
+    overflow-y: auto;
+    height: 30vw;
+}
+.budget_estimation_item{
+    background-color: rgb(43, 43, 43);
+    color: white;
+    padding: 1vw;
+    text-align: center;
+    margin: 0.5vw;
+    font-size: 1vw;
+}

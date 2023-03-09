@@ -10,6 +10,8 @@ import TeamRegistration from './Components/TeamRegistration/TeamRegistration';
 import PlayerRegistration from './Components/PlayerRegistration/PlayerRegistration';
 import MatchList from './Components/MatchList/MatchList';
 import UpdateMatch from './Components/UpdateMatch/UpdateMatch';
+import BudgetEstimation from './Components/BudgetEstimation/BudgetEstimation';
+import ExpenseManagement from './Components/ExpenseManagement/ExpenseManagement';
 
 
 export default class App extends PureComponent {
@@ -101,7 +103,10 @@ export default class App extends PureComponent {
         {/* <TeamRegistration/> */}
         {/* <PlayerRegistration/> */}
         {/* <MatchList/> */}
-        <UpdateMatch/>
+        {/* <UpdateMatch/> */}
+        {/* <BudgetEstimation/> */}
+        {/* <ExpenseManagement/> */}
+        
         <Footer data={this.state.footerLinks}/>
       </>
     )

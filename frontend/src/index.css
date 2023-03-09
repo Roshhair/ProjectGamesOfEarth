@@ -37,3 +37,6 @@ code {
 .float_right{
   float: right;
 }
+.inline_display{
+  display: inline-block;
+}
