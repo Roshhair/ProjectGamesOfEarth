@@ -3,6 +3,28 @@ import './Auction.css'
 import React, { Component } from 'react'
 
 export default class Auction extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+        playerID:"",
+      }
+    }
+    setValues(event) {
+        //Catching the Event Name form name tag
+        const name = event.target.name;
+        //Catching the target value form name tag
+        const value = event.target.value;
+        console.log(value)
+        // console.log(name)
+        // console.log()
+        // console.log(name);
+        //setting the value here in props
+        this.setState({ [name]: value });
+    }
+    submitHandler(){
+        console.log(this.state)
+    }
     render() {
         return (
             <div className='auction'>
@@ -18,7 +40,7 @@ export default class Auction extends Component {
                     </div>
                     <hr/>
                     <div className=''>
-                        <div className=''><input type='number' className='auction_input' placeholder='Player Id'/></div>
+                        <div className=''><input type='number' name="playerID" value={this.state.playerID} onChange={(event)=>{this.setValues(event)}} className='auction_input' placeholder='Player Id'/></div>
                         <div className=''><button className='auction_button'>Search</button></div>
                     </div>
                 </div>

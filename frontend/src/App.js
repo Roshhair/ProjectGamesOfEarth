@@ -14,6 +14,7 @@ import BudgetEstimation from './Components/BudgetEstimation/BudgetEstimation';
 import ExpenseManagement from './Components/ExpenseManagement/ExpenseManagement';
 import Auction from './Components/Auction/Auction';
 import AuctionManager from './Components/AuctionManager/AuctionManager';
+import EventDetails from './Components/EventDetails/EventDetails';
 
 
 export default class App extends PureComponent {
@@ -103,13 +104,14 @@ export default class App extends PureComponent {
         {/* <DashBoard/> */}
         {/* <CreateEventPage/> */}
         {/* <TeamRegistration/> */}
-        <PlayerRegistration/>
+        {/* <PlayerRegistration/> */}
         {/* <MatchList/> */}
         {/* <UpdateMatch/> */}
         {/* <BudgetEstimation/> */}
         {/* <ExpenseManagement/> */}
         {/* <Auction/> */}
         {/* <AuctionManager/> */}
+        <EventDetails/>
         <Footer data={this.state.footerLinks}/>
       </>
     )
