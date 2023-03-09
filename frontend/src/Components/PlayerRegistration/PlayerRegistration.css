@@ -1,0 +1,69 @@
+.player_registration{
+    background-color: rgb(80, 80, 80);
+    padding: 2vw;
+}
+.player_registration_div{
+    margin-left: 30vw;
+}
+.player_registration_title{
+    font-size: 2vw;
+    text-align: center;
+    color: white;
+    margin-bottom: 1vw;
+}
+.player_registration_input{
+    width: 20vw;
+    height: 3vw;
+    font-size: 1.2vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    margin: 0vw 1vw 2vw 10vw;
+    color: black;
+}
+.player_registration_button{
+    padding: 0.5vw;
+    color: white;
+    background-color: transparent;
+    border: white 0.2vw solid;
+    font-size: 1.5vw;
+}
+.player_registration_text{
+    font-size: 1.8vw;
+    color: white;
+    text-align: center;
+}
+.player_registration_button_div{
+    text-align: center;
+}
+.player_registration_div_checkbox{
+    margin: 0vw 0vw 1vw 10vw;
+}
+.player_registration_checkbox{
+    height: 1.5vw;
+    width: 1.5vw;
+}
+.player_registration_input_div{
+    margin: 1vw 0vw 0vw 0vw;
+}
+.player_registration_hr{
+    margin: 2vw 0vw;
+}
+.player_registration_button:hover{
+    color: black;
+    background-color: white;
+}
+.player_registration_select{
+    width: 20vw;
+    /* height: 3vw; */
+    font-size: 1.2vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    margin: 0vw 1vw 2vw 10vw;
+    color: black;
+}
+.player_registration_subtitle{
+    font-size: 1.5vw;
+    text-align: center;
+    color: white;
+    margin-bottom: 0vw;
+}

@@ -1,0 +1,42 @@
+.auction{
+    background-color: rgb(71, 71, 71);
+    padding: 2vw;
+}
+.auction_title{
+    color: white;
+    text-align: center;
+    font-size: 1.8vw;
+}
+.auction_player_card{
+    background-color: black;
+    color: white;
+    font-size: 1.2vw;
+    padding: 1vw;
+    margin-left: 33.33%;
+}
+.auction_managers_list{
+    border: 0.2vw white solid;
+    text-align: center;
+    font-size: 1vw;
+    color: white;
+    padding: 2vw;
+
+}
+.auction_button{
+    padding: 0.5vw;
+    color: white;
+    background-color: transparent;
+    border: white 0.2vw solid;
+    font-size: 1.5vw;
+    margin-left: 47%;
+}
+.auction_input{
+    width: 20vw;
+    height: 3vw;
+    font-size: 1.2vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    margin: 1vw 1vw 1vw 40%;
+    color: black;
+}
+

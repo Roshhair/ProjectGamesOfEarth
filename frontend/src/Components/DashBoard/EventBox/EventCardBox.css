@@ -1,0 +1,50 @@
+
+.eventcardbox_div{
+    border: blue 0.2vw solid;
+    border-radius: 2vw;
+    padding: 2vw 2vw 8vw 2vw;
+    /* background-color: red ; */
+}
+.eventcardbox_list{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.eventcardbox_addEvent{
+    margin: 1vw;
+    font-size: 1.4vw;
+    background-color:transparent;
+    border: white 0.2vw solid;
+    color: white;
+    padding: 0.5vw;
+}
+.eventcardbox_list_items{
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.eventcardbox_float_left{
+    float: left;
+}
+.eventcardbox_float_right{
+    float: right;
+}
+/* .eventcardbox_div_color{
+    border: red solid 0.1vw;
+} */
+.eventcardbox_clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+.eventcardbox_text{
+    font-size: 1.5vw;
+    color: white;
+    margin: 1.5vw;
+}
+.eventcardbox_margin_left{
+    margin-left: 2%;
+}
+.eventcardbox_margin_right{
+    margin-right: 2%;
+}

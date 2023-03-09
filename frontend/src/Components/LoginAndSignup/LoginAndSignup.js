@@ -18,16 +18,21 @@ export default class LoginAndSignup extends Component {
 
         return this.props.show &&
             (<>
-                <div className='ls-background'  onClick={this.props.setShowFalse}>
+                <div className='ls-background' onClick={this.props.setShowFalse}>
                 </div>
-                <div className='ls-form col-3' >
-                    <span className='ls-cross' onClick={this.props.setShowFalse}>
-                        <img className='ls-cross-image' src={require('../Images/cross.png')} alt='Cross'/>
-                    </span>
-                    <br />
+                <div className='ls-form col-4' >
+                    <div className='ls-cross' onClick={this.props.setShowFalse}>
+                        <img className='ls-cross-image' src={require('../Images/cross.png')} alt='Cross' />
+                    </div>
                     <div>
-                        <button className='ls-topic-button' onClick={() => { this.setState({ isSignup: true }) }}>Sign In</button>
-                        <button className='ls-topic-button' onClick={() => { this.setState({ isSignup: false }) }}>Sign Up</button>
+                        <ul className='ls-list clearfix'>
+                            <li className='ls-list-items float-left'>
+                            <button className='ls-topic-button' onClick={() => { this.setState({ isSignup: true }) }}>Sign In</button>
+                            </li>
+                            <li className='ls-list-items float-right'>
+                            <button className='ls-topic-button' onClick={() => { this.setState({ isSignup: false }) }}>Sign Up</button>
+                            </li>
+                        </ul>
                     </div>
                     <hr />
                     {this.state.isSignup ? <Signin /> : <Signup />}

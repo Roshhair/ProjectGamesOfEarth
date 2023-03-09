@@ -1,0 +1,28 @@
+.event_details{
+    background-color: rgb(61, 61, 61);
+    padding: 2vw;
+}
+.event_details_text{
+    font-size: 1.5vw;
+    color: white;
+    text-align: center;
+    margin: 1vw;
+}
+.event_details_input{
+    width: 20vw;
+    height: 3vw;
+    font-size: 1.2vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    margin: 1vw 1vw 1vw 40%;
+    color: black;
+}
+.event_details_button{
+    padding: 0.5vw;
+    width: 10vw;
+    color: white;
+    background-color: transparent;
+    border: white 0.2vw solid;
+    font-size: 1.5vw;
+    margin-left: 45.5%;
+}

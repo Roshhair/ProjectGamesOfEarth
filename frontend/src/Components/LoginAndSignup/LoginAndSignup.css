@@ -13,18 +13,18 @@
     z-index: 1005;
 }
 
-.col-3 {
-    width: 25%;
-}
+
+.col-4 {width: 33.33%;}
+
 
 .ls-input-label {
     margin: 1vw 0vw;
     position: relative;
-    width: 25vw;
+    width: 27vw;
     height: 3vw;
     font-size: 1.2vw;
     border-radius: 1vw;
-    border: none;
+    /* border: black; */
     padding-left: 1vw;
 }
 
@@ -42,8 +42,6 @@
 .ls-topic-button{
     display: inline;
     text-align: center;
-    margin: 0vw 2vw 0vw 2.8vw;
-    /* padding: 0.5vw 1.5vw; */
     font-size: 1.8vw;
     background: none;
     color: aliceblue;
@@ -63,11 +61,12 @@
     /* content: "\274C"; */
     z-index: 1002;
     opacity: 100%;
-    float: right;
+    /* float: right; */
 }
 .ls-cross-image{
     height: 100%;
     width:1vw;
+    float: right;
 }
 .ls-login-button:hover{
     background-color: white;
@@ -77,4 +76,35 @@
     /* border: 0.1vw white solid;
      */
      color:gray;
+}
+
+.ls-list{
+    list-style-type: none;
+    list-style-position: inside;
+    /* border: 1px solid rebeccapurple; */
+    padding: 0%;
+    margin: 0;
+}
+.ls-list-items{
+    display: inline-block;
+    /* border: 1px solid red; */
+}
+
+.float-left {
+    float: left;
+    margin-left: 12% ;
+}
+
+.float-right {
+    float: right;
+    margin-right: 12% ;
+}
+
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.ls-error{
+    border: red solid 0.3vw;
 }

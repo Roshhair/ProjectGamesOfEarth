@@ -1,0 +1,71 @@
+.update_match{
+    background-color: rgb(59, 59, 59);
+    padding: 2vw;
+}
+.update_match_title{
+    text-align: center;
+    color:white;
+    font-size: 2vw;
+}
+.update_match_inline{
+    display: inline-block;
+}
+.update_match_goal{
+    margin: 0;
+    text-align: center;
+}
+.update_match_teams{
+    font-size: 1.5vw;
+    color: white;
+}
+.update_match_score{
+    border: rgb(144, 144, 144) 0.2vw solid;
+    margin: 0.5vw;
+    width:5vw;
+    height: 3vw;
+    font-size: 1.3vw;
+    color: white;
+    padding: 0.5vw;
+    text-align: center;
+    margin-left: 8.5vw ;
+}
+.update_match_select{
+    width: 20vw;
+    height: 3vw;
+    font-size: 1.2vw;
+    padding: 0vw 1vw;
+    border-radius: 0.5vw;
+    margin: 2vw;
+}
+.update_match_button{
+    padding: 0.5vw;
+    color: white;
+    background-color: transparent;
+    border: white 0.2vw solid;
+    font-size: 1.5vw;
+    width: 10vw;
+    
+}
+.update_match_text_mid{
+    text-align: center;
+    margin: 1vw;
+}
+.update_match_players_list{
+    border: white 0.2vw solid;
+    height: 30vw;
+    border-radius: 2vw;
+    padding: 1vw;
+    
+}
+.update_match_padding{
+    padding: 2vw;
+}
+.update_match_player{
+    color: white;
+    font-size: 1.2vw;
+    text-align: center;
+    margin-bottom: 0.5vw;
+    background-color: rgb(45, 45, 45);
+    padding: 1vw;
+    border-radius: 0.5vw;
+}

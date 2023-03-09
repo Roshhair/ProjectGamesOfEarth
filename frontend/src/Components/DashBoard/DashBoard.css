@@ -1,0 +1,13 @@
+.dash_headder{
+    padding:0;
+    margin: 00vw;
+    font-size: 2vw;
+}
+.dashboard{
+    padding: 2vw;
+    background-color: rgb(71, 71, 71);
+}
+
+.dash_line{
+    border: 0.1vw solid white;
+}

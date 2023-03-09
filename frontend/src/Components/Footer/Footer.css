@@ -15,11 +15,13 @@
     margin: 2vw 2vw 2vw 2vw ;
     display: inline-block;
     color: white;
+    font-size: 1.2vw;
     /* text-decoration: none; */
 }
 .footer_list_links{
     text-decoration: none;
     color: white;
+    /* font-size: 1.2vw; */
 }
 .footer_span{
     font-size: 1.2vw;

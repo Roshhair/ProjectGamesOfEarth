@@ -11,8 +11,17 @@ import MatchMaker from './Components/MatchMaker/MatchMaker';
 import Manager from './Components/Manager/Manager';
 import ManagerAuc from './Components/Manager/ManagerAuc';
 import Statusbar from './Components/Statusbar/Statusbar';
-
-
+import DashBoard from './Components/DashBoard/DashBoard';
+import CreateEventPage from './Components/CreateEvent/CreateEventPage';
+import TeamRegistration from './Components/TeamRegistration/TeamRegistration';
+import PlayerRegistration from './Components/PlayerRegistration/PlayerRegistration';
+import MatchList from './Components/MatchList/MatchList';
+import UpdateMatch from './Components/UpdateMatch/UpdateMatch';
+import BudgetEstimation from './Components/BudgetEstimation/BudgetEstimation';
+import ExpenseManagement from './Components/ExpenseManagement/ExpenseManagement';
+import Auction from './Components/Auction/Auction';
+import AuctionManager from './Components/AuctionManager/AuctionManager';
+import EventDetails from './Components/EventDetails/EventDetails';
 
 
 export default class App extends PureComponent {
@@ -30,16 +39,11 @@ export default class App extends PureComponent {
       },
       {
         id: 2,
-        name: "Blog",
+        name: "Docs",
         css:'nav_a nav_text_only nav_li_a_text'
       },
       {
         id: 3,
-        name: "Services",
-        css:'nav_a nav_text_only nav_li_a_text'
-      },
-      {
-        id: 4,
         name: "Home",
         css:'nav_a nav_text_only nav_li_a_text'
       }
@@ -52,32 +56,14 @@ export default class App extends PureComponent {
           acss:"footer_list_links"
         },
         {
-          name:"Privacy",
+          name:"Docs",
           id:2,
           licss:"footer_list_items",
           acss:"footer_list_links"
         },
         {
-          name:"Security",
-          id:3,
-          licss:"footer_list_items",
-          acss:"footer_list_links"
-        },
-        {
-          name:"Docs",
-          id:4,
-          licss:"footer_list_items",
-          acss:"footer_list_links"
-        },
-        {
-          name:"Blog",
-          id:5,
-          licss:"footer_list_items",
-          acss:"footer_list_links"
-        },
-        {
           name:"About Us",
-          id:6,
+          id:3,
           licss:"footer_list_items",
           acss:"footer_list_links"
         },
@@ -122,15 +108,30 @@ export default class App extends PureComponent {
     return (
       <>
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
+
         {/* <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} /> */}
-        <Home />
+        {/* <Home />
          <Card />
-        <Design /> 
+        <Design />  */}
         {/* <MatchMaker /> */}
         {/* <Manager /> */}
-        {/* <ManagerAuc /> */}ex
+        {/* <ManagerAuc /> */}
         {/* <Statusbar /> */}
     
+
+        <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
+        {/* <DashBoard/> */}
+        {/* <CreateEventPage/> */}
+        {/* <TeamRegistration/> */}
+        {/* <PlayerRegistration/> */}
+        {/* <MatchList/> */}
+        {/* <UpdateMatch/> */}
+        {/* <BudgetEstimation/> */}
+        {/* <ExpenseManagement/> */}
+        {/* <Auction/> */}
+        {/* <AuctionManager/> */}
+        <EventDetails/>
+
         <Footer data={this.state.footerLinks}/>
       </>
     )
