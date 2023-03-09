@@ -40,3 +40,6 @@ code {
 .inline_display{
   display: inline-block;
 }
+.margin_zero{
+  margin: 0%;
+}

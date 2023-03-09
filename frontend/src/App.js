@@ -12,6 +12,7 @@ import MatchList from './Components/MatchList/MatchList';
 import UpdateMatch from './Components/UpdateMatch/UpdateMatch';
 import BudgetEstimation from './Components/BudgetEstimation/BudgetEstimation';
 import ExpenseManagement from './Components/ExpenseManagement/ExpenseManagement';
+import Auction from './Components/Auction/Auction';
 
 
 export default class App extends PureComponent {
@@ -106,7 +107,7 @@ export default class App extends PureComponent {
         {/* <UpdateMatch/> */}
         {/* <BudgetEstimation/> */}
         {/* <ExpenseManagement/> */}
-        
+        <Auction/>
         <Footer data={this.state.footerLinks}/>
       </>
     )
