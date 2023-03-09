@@ -2,8 +2,11 @@ package com.gamesOfEarth.backend.entitybeans;
 
 import java.util.Set;
 
+import org.hibernate.internal.build.AllowSysOut;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -18,15 +21,17 @@ public class User {
 	private String email;
 	@Column
 	private String password;
-	@OneToMany(mappedBy ="user")
+	@OneToMany(mappedBy ="user",fetch = FetchType.EAGER)
 	private Set<Event> events;
 	public User() {
+		System.out.println("Constrctor called");
 		// TODO Auto-generated constructor stub
 	}
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
+//		System.out.println(id);
 		this.id = id;
 	}
 	public String getName() {
@@ -59,12 +64,21 @@ public class User {
 				+ events + "]";
 	}
 	public User(int id, String name, String email, String password, Set<Event> events) {
-		super();
+		//super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.password = password;
 		this.events = events;
 	}
+	public User(int id, String name, String email, String password) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.email = email;
+		this.password = password;
+		this.events = null;
+	}
+	
 	
 }

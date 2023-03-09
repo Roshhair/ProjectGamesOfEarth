@@ -1,5 +1,6 @@
 import './LoginAndSignup.css'
 import React, { Component } from 'react'
+import axios from 'axios';
 
 export  class Signin extends Component {
     constructor(props) {
@@ -22,33 +23,33 @@ export  class Signin extends Component {
         //setting the value here in props
         this.setState({[name]:value});
     }
-    validateEmail(){
-        const text=this.state.emailID;
-        const email=/^[a-z A-Z 0-9]+[@][a-z]+[.][a-z]{2,3}$/
-        console.log(email.test(text))
-        if(email.test(text)){
-            this.setState({...this.state,emailError:""})
-        }
-        else{
-            this.setState({...this.state,emailError:"ls-error"})
-        }
+    // validateEmail(){
+    //     const text=this.state.emailID;
+    //     const email=/^[a-z A-Z 0-9]+[@][a-z]+[.][a-z]{2,3}$/
+    //     console.log(email.test(text))
+    //     if(email.test(text)){
+    //         this.setState({...this.state,emailError:""})
+    //     }
+    //     else{
+    //         this.setState({...this.state,emailError:"ls-error"})
+    //     }
         
-    }
+    // }
     submitHandler(){
-        if(this.state.emailID!=="" && this.state.password!=="" && this.state.emailError==="" && this.state.passError===""){
-            //axios here
-            //setting rediection true
-        }
-        else{
-            alert("Email or Password is Wrong")
-            this.setState({
-                emailID:"",
-                password:"",
-                emailError:"",
-                passError:"",
-                redirect:false
-              });
-        }
+        // if(this.state.emailID!=="" && this.state.password!=="" && this.state.emailError==="" && this.state.passError===""){
+            axios.post("http://localhost:9000/post",{email:this.state.emailID,password:this.state.password})
+            .then((res)=>console.log(res));
+        // }
+        // else{
+        //     alert("Email or Password is Wrong")
+        //     this.setState({
+        //         emailID:"",
+        //         password:"",
+        //         emailError:"",
+        //         passError:"",
+        //         redirect:false
+        //       });
+        // }
     }
   render() {
     //use navigate for two options of naivgation
@@ -63,7 +64,7 @@ export  class Signin extends Component {
         <>
         <div>
             <div className=''>
-                <input type='text' id='email' name='emailID' className={`ls-input-label`} placeholder='Email' value={this.state.username} onChange={(event)=>{this.setValues(event);this.validateEmail()}}/>
+                <input type='text' id='email' name='emailID' className={`ls-input-label`} placeholder='Email' value={this.state.username} onChange={(event)=>{this.setValues(event)}}/>
             </div>
             <div>
                 <input type='password' id='password' name='password' className='ls-input-label' placeholder='Password' value={this.state.password} onChange={(event)=>{this.setValues(event)}}/>

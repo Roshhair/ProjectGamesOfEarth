@@ -4,6 +4,7 @@ import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
@@ -14,7 +15,7 @@ public class Feature {
 	private int id;
 	@Column
 	private String name;
-	@ManyToMany(mappedBy = "features")
+	@ManyToMany(mappedBy = "features",fetch = FetchType.LAZY)
 	private Set<Event> events;
 	public Feature() {
 		// TODO Auto-generated constructor stub

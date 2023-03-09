@@ -5,6 +5,7 @@ import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -24,16 +25,16 @@ public class Team {
 	@ManyToOne
 	@JoinColumn(name="event_id" ,nullable = false)
 	private Event event;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name="players_in_teams",
 	joinColumns = @JoinColumn(name="team_id"),
 	inverseJoinColumns = @JoinColumn(name="player_id"))
 	private Set<Player> players;
 	@OneToOne(mappedBy = "team")
 	private Manager manager;
-	@OneToMany(mappedBy = "teamOne")
+	@OneToMany(mappedBy = "teamOne",fetch = FetchType.LAZY)
 	private Set<Match> matches;
-	@OneToMany(mappedBy = "teamTwo")
+	@OneToMany(mappedBy = "teamTwo",fetch = FetchType.LAZY)
 	private Set<Match> matches1;
 	
 	public Team() {

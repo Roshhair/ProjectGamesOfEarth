@@ -4,6 +4,7 @@ import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
@@ -23,13 +24,13 @@ public class Player {
 	private String position;
 	@Column
 	private int age;
-	@ManyToMany(mappedBy = "players")
+	@ManyToMany(mappedBy = "players",fetch = FetchType.LAZY)
 	private Set<Event> events;
-	@ManyToMany(mappedBy = "players")
+	@ManyToMany(mappedBy = "players",fetch = FetchType.LAZY)
 	private Set<Team> teams;
-	@OneToMany(mappedBy = "player")
+	@OneToMany(mappedBy = "player",fetch = FetchType.LAZY)
 	private Set<MatchScorer> matcheScorers;
-	@OneToMany(mappedBy = "player")
+	@OneToMany(mappedBy = "player",fetch = FetchType.LAZY)
 	private Set<Auction> auctions;
 	public Player() {
 		// TODO Auto-generated constructor stub

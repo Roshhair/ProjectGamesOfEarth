@@ -7,6 +7,7 @@ import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -33,7 +34,7 @@ public class Event {
 	@ManyToOne
 	@JoinColumn(name="user_id")
 	private User user;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name="features_in_events",
 	joinColumns = @JoinColumn(name="event_id"),
 	inverseJoinColumns =  @JoinColumn(name="feature_id"))
@@ -44,16 +45,16 @@ public class Event {
 	@ManyToOne
 	@JoinColumn(name="event_type_id",nullable = false)
 	private EventType eventType;
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "players_in_events",
 	joinColumns = @JoinColumn(name="event_id"),
 	inverseJoinColumns = @JoinColumn(name="player_id"))
 	private Set<Player> players;
-	@OneToMany(mappedBy = "event")
+	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
 	private Set<Team> teams;
-	@OneToMany(mappedBy = "event")
+	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
 	private Set<Match> matches;
-	@OneToMany(mappedBy = "event")
+	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
 	private Set<BudgetEstimation> budgetEstimations;
 	@OneToOne(mappedBy = "event")
 	private ManagerEvent managerEvent;

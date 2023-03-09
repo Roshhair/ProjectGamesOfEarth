@@ -4,6 +4,7 @@ import java.util.Set;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
@@ -14,7 +15,7 @@ public class EventType {
 	private int id;
 	@Column
 	private String name;
-	@OneToMany(mappedBy = "eventType")
+	@OneToMany(mappedBy = "eventType",fetch = FetchType.LAZY)
 	private Set<Event> events;
 	public EventType() {
 		// TODO Auto-generated constructor stub
