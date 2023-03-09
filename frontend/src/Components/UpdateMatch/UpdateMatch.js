@@ -2,6 +2,17 @@ import React, { Component } from 'react'
 import './UpdateMatch.css'
 
 export default class UpdateMatch extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+        players:[],
+        teamA:{},
+        teamB:{},
+        playerWithGoal:[]
+      }
+    }
+
     render() {
         return (
             <div className='update_match clearfix'>
@@ -21,15 +32,16 @@ export default class UpdateMatch extends Component {
                         </div>
                         <div className='col-12 '>
                         <div className='col-6 update_match_inline'>
-                            <select className='update_match_select'>
-                                <option>Select Team</option>
+                            <select className='update_match_select' value='select'>
+                                <option disabled value='select'>Select Team</option>
                                 <option>Team A</option>
                                 <option>Team B</option>
                             </select>
                         </div>
                         <div className='col-6 update_match_inline'>
-                            <select className='update_match_select'>
-                                <option>Select Player</option>
+                            <select className='update_match_select' value='select'>
+                                <option disabled value='select'>Select Player</option>
+                                {/* <option >Rushikesh</option> */}
                             </select>
                         </div>
                         <div className='update_match_text_mid'><button className='update_match_button'>Add</button></div>
@@ -37,14 +49,23 @@ export default class UpdateMatch extends Component {
                     </div>
                     <div className='col-6 update_match_inline update_match_padding float_right'>
                         <div className='update_match_players_list'>
-                            <div className='update_match_player'>
-                                <div className='col-6 update_match_inline float_left'>
+                            <div className='update_match_player clearfix'>
+                                <div className='col-6 update_match_goal update_match_inline float_left'>
                                     Player Name
                                 </div>
-                                <div className='col-4 update_match_inline float_right'>
+                                <div className='col-6 update_match_goal update_match_inline float_right'>
                                     Goals
                                 </div>
                             </div>
+                            <div className='update_match_player clearfix'>
+                                <div className='col-6 update_match_goal update_match_inline float_left'>
+                                    Rushikesh
+                                </div>
+                                <div className='col-6 update_match_goal update_match_inline float_right'>
+                                    1
+                                </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

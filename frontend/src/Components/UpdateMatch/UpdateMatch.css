@@ -10,9 +10,6 @@
 .update_match_inline{
     display: inline-block;
 }
-.red_div{
-    border: 0.1vw red solid;
-}
 .update_match_goal{
     margin: 0;
     text-align: center;
@@ -58,15 +55,17 @@
     height: 30vw;
     border-radius: 2vw;
     padding: 1vw;
+    
 }
 .update_match_padding{
-    padding: 2vw
+    padding: 2vw;
 }
 .update_match_player{
-    /* background-color: black; */
     color: white;
-    font-size: 1.5vw;
+    font-size: 1.2vw;
     text-align: center;
-    margin: 0;
-    background-color: aliceblue;
+    margin-bottom: 0.5vw;
+    background-color: rgb(45, 45, 45);
+    padding: 1vw;
+    border-radius: 0.5vw;
 }
