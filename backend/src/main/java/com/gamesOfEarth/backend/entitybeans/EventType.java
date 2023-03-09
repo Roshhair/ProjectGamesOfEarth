@@ -8,7 +8,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 @Entity
-@Table(name="event_type")
+@Table(name="event_types")
 public class EventType {
 	@Id
 	private int id;

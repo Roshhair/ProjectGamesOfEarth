@@ -9,7 +9,7 @@ import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="manager_event")
+@Table(name="manager_events")
 public class ManagerEvent {
 	@Id 
 	private int id;
