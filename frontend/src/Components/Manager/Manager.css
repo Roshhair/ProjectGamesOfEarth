@@ -1,0 +1,129 @@
+.manager_container{
+    /* border: 1px solid red; */
+    width: 100%;
+}
+.manager_div1{
+    width: 50%;
+    /* border: 1px solid green; */
+    display: inline-block;
+    padding-bottom: 2vw;
+}
+.manager_div2{
+    width: 50%;
+    /* border: 1px solid rgb(0, 0, 0); */
+    display: inline-block;
+}
+.manager_innerdiv1{
+    padding-top: 1vw;
+    font-size: xx-large;
+    
+
+
+}
+.manager_innerdiv2{
+    padding-top: 1vw;
+    font-size: xx-large;
+    
+}
+.manager_text1{
+    margin-left: 3vw;
+    font-size: 1.6vw;
+    padding: 0.6vw;
+
+}
+.manager_text2{
+    margin-left: 6.6vw;
+    font-size: 1.6vw;
+    padding: 0.6vw;
+
+}
+.button_div2{
+    padding-top: 0.6vw;
+    
+
+}
+.manager_button{
+    font-size: 1.6vw;
+    padding: 0.6vw;
+    
+}
+.pay_div1{
+    font-size: 2vw;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+    /* border: 1px solid rgb(0, 0, 0); */
+
+}
+.pay_button1{
+    margin-left: 2vw;
+    font-size: 1.6vw;
+    padding: 0.6vw;
+}
+.pay_text{
+    margin-left: 3vw;
+    font-size: 1.6vw;
+    padding: 0.6vw;
+
+}
+.pay_details{
+    font-size: 3vw;
+    /* color: white; */
+    background-color: #808080;
+    /* text-align: center; */
+    padding: 0.6vw;
+   
+    border: 2px solid rgb(90, 87, 87);  
+}
+.manager_pay{
+    padding-top: 1vw;
+    padding-bottom: 1vw;
+    font-size: 2vw;
+    text-align: center;
+}
+.manager_select{
+    margin-left: 3vw;
+    /* font-size: 3vw; */
+    height: 2.8vw;
+    width: 20vw;
+    text-align: center;
+}
+.manager_text{
+    font-size: 1.4vw;
+    padding: 0.3vw;
+    margin-left: 2.2vw;
+}
+.manager_overview{
+    font-size: 2vw;
+    padding: 0.6vw;
+    /* color: white; */
+    background-color: #808080;
+    /* text-align: center; */
+   
+    border: 2px solid rgb(90, 87, 87);  
+}
+.manager_div{
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    font-size: 1.4vw;
+}
+.manager_input{
+    text-align: center;
+    font-size: 1.4vw;
+}
+.manager_editbtn{
+    font-size: 1vw;
+    float: right;
+
+}
+.manager_maindiv{
+    background-color: rgb(171, 165, 165);
+}
+.manager_list{
+    /* border: 1px solid red; */
+    padding-top: 1vw;
+}
+.manager_item{
+    font-size: 1.3vw;
+    border: 1px solid rgb(16, 15, 15);
+}
