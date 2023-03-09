@@ -110,9 +110,9 @@ export default class App extends PureComponent {
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
         {/* <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} /> */}
-        {/* <Home />
+        <Home />
          <Card />
-        <Design />  */}
+        <Design /> 
         {/* <MatchMaker /> */}
         {/* <Manager /> */}
         {/* <ManagerAuc /> */}
