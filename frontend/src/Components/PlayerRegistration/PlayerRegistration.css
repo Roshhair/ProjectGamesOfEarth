@@ -9,7 +9,7 @@
     font-size: 2vw;
     text-align: center;
     color: white;
-    margin-bottom: 2vw;
+    margin-bottom: 1vw;
 }
 .player_registration_input{
     width: 20vw;
@@ -51,4 +51,19 @@
 .player_registration_button:hover{
     color: black;
     background-color: white;
+}
+.player_registration_select{
+    width: 20vw;
+    /* height: 3vw; */
+    font-size: 1.2vw;
+    padding: 1vw;
+    border-radius: 0.5vw;
+    margin: 0vw 1vw 2vw 10vw;
+    color: black;
+}
+.player_registration_subtitle{
+    font-size: 1.5vw;
+    text-align: center;
+    color: white;
+    margin-bottom: 0vw;
 }

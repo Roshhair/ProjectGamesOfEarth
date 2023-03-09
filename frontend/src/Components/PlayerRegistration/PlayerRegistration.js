@@ -10,7 +10,8 @@ export default class PlayerRegistration extends Component {
         email:"",
         phone:"",
         age:"",
-        agree:false
+        agree:false,
+        position:"select"
       }
     }
     setValues(event) {
@@ -42,6 +43,7 @@ export default class PlayerRegistration extends Component {
             <div className='player_registration'>
                 <div className="col-5 player_registration_div">
                     <div className="player_registration_title">Player Registration</div>
+                    <div className='player_registration_subtitle'>Event Name @ Sport</div>
                     <hr className='player_registration_hr'/>
                     <div className="">
                         <div className="player_registration_input_div">
@@ -55,6 +57,12 @@ export default class PlayerRegistration extends Component {
                         </div>
                         <div className="player_registration_input_div">
                             <input type="number" className='player_registration_input' name='age' value={this.state.age} onChange={(event)=>{this.setValues(event)}} placeholder="Enter your Age " required />
+                        </div>
+                        <div className='player_registration_input_div'>
+                            <select className='player_registration_select' name='position' value={this.state.position} onChange={(event)=>{this.checkBoxHandler(event)}} >
+                                <option disabled value='select'>Select Position</option>
+                                <option value='Rushi'>Rushi</option>
+                            </select>
                         </div>
                         <div className="player_registration_div_checkbox">
                             <input type="checkbox" className='player_registration_checkbox' name='agree' onChange={(event)=>{this.checkBoxHandler(event)}}/> <span className='player_registration_text'>I Agree</span>
