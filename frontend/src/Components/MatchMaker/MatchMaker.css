@@ -1,0 +1,103 @@
+.container{
+    /* border: 1px solid red; */
+    margin-top: 0.3vw;
+    /* padding-top: 0.v\w; */
+}
+.legs_div{
+    /* border: 1px solid rgb(0, 96, 18); */
+    /* padding-left: 40%;
+    padding-right:40%; */
+    font-size: x-large;
+    /* padding-left: 40%; */
+    text-align: center;
+    padding-top: 1vw;
+    background-color: #acabab;
+}
+.legs_text{
+    font-size: x-large;
+    width: 6vw;
+    margin-left: 3%;
+}
+.total_div{
+    background-color: #acabab;
+    /* border: 1px solid blue; */
+    padding-top: 1vw;
+    text-align: center;
+    font-size: x-large;
+    padding-left: 3%;
+    padding-bottom: 1vw;
+}
+.total_text{
+    margin-left: 3%;;
+    font-size: x-large;
+    width: 6vw;
+}
+.create_match{
+    font-size: 3vw;
+    /* color: white; */
+    background-color: #808080;
+    /* text-align: center; */
+   
+    border: 2px solid rgb(90, 87, 87);
+    
+  
+  
+   
+}
+.match{
+    background-color: #acabab;
+    padding-top: 2%;
+    text-align: center;
+    font-size: xx-large;
+    padding-bottom: 2%;
+   
+    
+}
+select {
+    font-size: xx-large;
+}
+.date_match{
+    padding-top: 0.7vw;
+    font-size: x-large;
+    text-align: center;
+    
+}
+.time{
+    text-align: center;
+    font-size: x-large; 
+    /* margin-right: 2vw; */
+    padding-top: 0.7vw;
+}
+.venue{
+    text-align: center;
+    font-size: x-large; 
+    padding-top: 0.7vw;
+}
+.buttons_div{
+    /* font: x-; */
+    padding-top: 2vw;
+    
+}
+.button{
+    height: 3vw;
+    width: 6vw;
+}
+.display_matches{
+    background-color: #acabab;
+    /* font-size: 2vw; */
+    height:7vw;
+    /* border: 1px solid black; */
+}
+.delete_button{
+    float: right;
+}
+.text_center{
+    text-align: center;
+}
+.man_auc_innerdiv{
+    border: 1px solid black;
+    background-color: #808080;
+}
+/* .matches_view{
+    background-color: #808080;
+} */

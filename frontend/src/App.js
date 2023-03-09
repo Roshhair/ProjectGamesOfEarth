@@ -4,6 +4,15 @@ import { Navigation } from './Components/NavigationBar/Navigation';
 import React, { PureComponent } from 'react';
 import LoginAndSignup from './Components/LoginAndSignup/LoginAndSignup';
 import Footer from './Components/Footer/Footer';
+import Home from './Components/Home/Home';
+import Card from './Components/Card/Card';
+import Design from './Components/Design/Design';
+import MatchMaker from './Components/MatchMaker/MatchMaker';
+import Manager from './Components/Manager/Manager';
+import ManagerAuc from './Components/Manager/ManagerAuc';
+import Statusbar from './Components/Statusbar/Statusbar';
+
+
 
 
 export default class App extends PureComponent {
@@ -107,17 +116,26 @@ export default class App extends PureComponent {
     console.log(data);
     this.setState({ ...this.state, data: "nav_hilighted" })
   }
+  
 
   render() {
     return (
       <>
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
-        <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
+        {/* <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} /> */}
+        <Home />
+         <Card />
+        <Design /> 
+        {/* <MatchMaker /> */}
+        {/* <Manager /> */}
+        {/* <ManagerAuc /> */}ex
+        {/* <Statusbar /> */}
+    
         <Footer data={this.state.footerLinks}/>
       </>
     )
   }
+
+
+
 }
-
-
-

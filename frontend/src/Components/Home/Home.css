@@ -1,0 +1,66 @@
+.home_div{
+    /* border: 1px solid salmon; */
+    background-image: url(../Images/myimage.png);
+    min-height: 50vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  
+}
+
+.home_title {
+    /* margin: 0%; */
+    text-align: center;
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    font-size: 550%;
+    color: rgb(255, 255, 255);
+    transform: translate(-50%, -50%);
+}
+
+.home_div2 {
+    text-align: center;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* border: 1px solid red; */
+    width: 25%;
+}
+
+.home_button{
+    background-color: #010101;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  
+}
+.home_button:hover {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.float_left {
+  float: left; 
+}
+
+.float_right {
+  float: right;
+}
+.card_div {
+    border: 1px solid red; 
+    text-align: center;
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    transform: translate(-50%, -50%);
+    /* width:100vw;
+    height:20vw; */
+}
