@@ -108,7 +108,7 @@ export default class App extends PureComponent {
     return (
       <>
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
-
+        <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
         {/* <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} /> */}
         {/* <Home />
          <Card />
@@ -119,7 +119,7 @@ export default class App extends PureComponent {
         {/* <Statusbar /> */}
     
 
-        <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
+        
         {/* <DashBoard/> */}
         {/* <CreateEventPage/> */}
         {/* <TeamRegistration/> */}
