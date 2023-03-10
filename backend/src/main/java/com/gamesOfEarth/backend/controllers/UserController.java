@@ -49,7 +49,7 @@ public class UserController {
 	public boolean getLogged(HttpSession session) {
 		return session.getAttribute("user")==null?false:true;
 	}
-	@GetMapping("/log-out")
+	@PostMapping("/log-out")
 	public void logOut(HttpSession session) {
 		session.invalidate();
 	}

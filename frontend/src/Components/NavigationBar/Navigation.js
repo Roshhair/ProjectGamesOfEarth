@@ -7,7 +7,7 @@ import './Navigation.css'
 export const Navigation = (props) => {
     //Importing the array of the navlinks when not logined.....
     const navbarLinks = props.data.navbarLinks;
-      const [navigateTo,setNavigateTo]=useState(<Navigate to="/SignUpOrLogin"/>)
+    //   const [navigateTo,setNavigateTo]=useState()
       const [isLogged,setIsLogged]=useState(false);
     const [login,setLogin]=useState(true);
     const fetchisLoggedin=()=>{
@@ -18,8 +18,8 @@ export const Navigation = (props) => {
       },[isLogged]);
     // console.log(isLogged)
     const logout=()=>{
-        http.get("/log-out").then(res=>{
-            setNavigateTo(<Navigate to="/Home"/>)
+        http.post("/log-out").then(res=>{
+            // setNavigateTo()
             setLogin(false)
         })
     }
@@ -49,5 +49,5 @@ export const Navigation = (props) => {
                 </nav>
             </div>
         </>
-    ):navigateTo
+    ):isLogged?<Navigate to="/SignUpOrLogin"/>:<Navigate to="/Home"/>
 }
