@@ -1,36 +1,53 @@
 package com.gamesOfEarth.backend.controllers;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gamesOfEarth.backend.entitybeans.User;
 import com.gamesOfEarth.backend.services.UserService;
 
-import jakarta.annotation.PostConstruct;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpSession;
 
 @RestController
 public class UserController {
 	@Autowired
 	private UserService userService;
-	@GetMapping("/boi")
-	public User boi() {
-		return userService.getUser();
+//	@Autowired(required = true)
+//	private Navbar navbar;
+	@PostMapping("/user-login")
+	public boolean setUser(@RequestBody User user,HttpServletRequest req) {
+		User user1=userService.getUserLogin(user.getEmail(), user.getPassword());
+		if(user1!=null) {
+			HttpSession session = req.getSession();
+			session.setAttribute("user",user1);
+			return true;
+		}
+		return false;
 	}
-	@GetMapping("/hello")
-	public List<User> getAll(){
-		return userService.name();
+	@PostMapping("/create-user")
+	public boolean addUser(@RequestBody User user) {
+		User user1=userService.getUserByEmmail(user.getEmail());
+		if(user1==null) {
+			userService.addUser(user);
+			return true;
+		}
+		return false;
+		
 	}
-	@PostMapping("/post")
-	public void setUser(@RequestBody User user) {
-		System.out.println(user);
-		System.out.println(userService.getUserLogin(user.getEmail(), user.getPassword()));
-//		userService.set(user);
+	@GetMapping("/getUser")
+	public User getLogInedUser(HttpSession session) {
+		return (User)session.getAttribute("user");
 	}
+//	@GetMapping("/navlinks")
+//	public Navbar getNavbaar(HttpSession session) {
+//		if(session.getAttribute("user")==null) {
+//			navbar.setNavbarLinks(new String[]{"About Us","Docs","Home"});
+//		}
+//		return ;
+//	}
 }

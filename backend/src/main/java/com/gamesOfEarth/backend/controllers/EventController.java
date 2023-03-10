@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.gamesOfEarth.backend.entitybeans.Event;
+import com.gamesOfEarth.backend.entitybeans.User;
 import com.gamesOfEarth.backend.services.EventService;
+
+import jakarta.servlet.http.HttpSession;
 
 @RestController
 public class EventController {
@@ -15,6 +18,7 @@ public class EventController {
 	private EventService eventService;
 	@GetMapping("/get-events")
 	public List<Event> getAllEvents(){
+//		User user=(User)session.getAttribute("user");
 		return eventService.getAllEvents();
 	}
 	

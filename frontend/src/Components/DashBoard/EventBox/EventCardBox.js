@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Navigate } from 'react-router-dom'
 import { EventCard } from '../Events/EventCard'
 import './EventCardBox.css'
 
@@ -7,11 +8,12 @@ export default class EventCardBox extends Component {
     super(props)
   
     this.state = {
+      redirect:true
     }
   }
   render() {
     const events=this.props.events;
-    return (
+    return this.state.redirect?(
       <div>
         <div className='eventcardbox_div_color eventcardbox_clearfix'>
           <ul className='eventcardbox_list eventcardbox_clearfix'>
@@ -19,7 +21,7 @@ export default class EventCardBox extends Component {
               <p className='eventcardbox_text'> Event Card Box</p>
             </li>
             <li className='eventcardbox_list_items eventcardbox_div_color eventcardbox_float_right eventcardbox_margin_right'>
-              <button className='eventcardbox_addEvent' onClick={this.props.setCreateEventTrue}>Add Event</button>
+              <button  className='eventcardbox_addEvent' onClick={()=>{this.setState({redirect:false})}}>Add Event</button>
             </li>
           </ul>
 
@@ -34,6 +36,6 @@ export default class EventCardBox extends Component {
         </div>
       </div>
 
-    )
+    ):<Navigate to='/CreateEvent'/>
   }
 }

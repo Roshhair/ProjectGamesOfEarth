@@ -1,6 +1,9 @@
 
 
+import axios from 'axios';
 import React, { Component } from 'react'
+import { Navigate } from 'react-router-dom';
+import http from '../axiosHandler';
 
 export class Signup extends Component {
     constructor(props) {
@@ -11,7 +14,8 @@ export class Signup extends Component {
             emailID: "",
             password: "",
             confPassword: "",
-            navigate:false
+            navigate:false,
+            noError:true
         }
     }
     setValues(event) {
@@ -25,10 +29,11 @@ export class Signup extends Component {
     }
     confirmPass() {
         if (this.state.password === this.state.confPassword) {
-            console.log("cnf")
+            // console.log("cnf")
+            this.setState({...this.state,noError:true})
         }
         else {
-            console.log("not cnf")
+            this.setState({...this.state,noError:false})
         }
     }
     validateEmail() {
@@ -36,21 +41,30 @@ export class Signup extends Component {
         const email = /^[a-z A-Z 0-9]+[@][a-z]+[.][a-z]{2,3}$/
         // console.log(email.test(text))
         if (email.test(text)) {
-            console.log("cnf")
-            // this.setState({...this.state,emailError:""})
+            this.setState({...this.state,noError:true})
         }
         else {
-            console.log("Not cnf")
-            // this.setState({...this.state,emailError:"ls-error"})
+            this.setState({...this.state,noError:false})
         }
 
     }
 
-    submitHandler(event) {
-        event.preventDefault();
-        //check the conditions of incorrect
-        //the axios
-        //then set navagte true
+    submitHandler() {
+        if(this.state.noError){
+            axios.post("http://localhost:9000/create-user",{name:this.state.name,email:this.state.emailID,password:this.state.password})
+            .then((res)=>{if(res.data){
+                this.setState({...this.state,navigate:true})
+            }
+            else{
+                alert("User Already Exists")
+                this.setState({...this.state,navigate:true})
+            }
+        })
+            
+        }
+        else{
+            alert("Please Check Your Email Or Password");
+        }
     }
     render() {
         //use navigate for two options of naivgation
@@ -61,10 +75,10 @@ export class Signup extends Component {
         }
         return (.....form);
         */
-        return (
+        return !this.state.navigate?(
             <>
                 <div>
-                    <form onSubmit={(event)=>{this.submitHandler(event)}}>
+                    {/* <form onSubmit={(event)=>{this.submitHandler(event)}}> */}
                         <div>
                             <input type='text' name='name' className='ls-input-label' placeholder='Your Name' value={this.state.name} onChange={(event) => { this.setValues(event) }} />
                         </div>
@@ -80,10 +94,10 @@ export class Signup extends Component {
                         <div>
                             <button type='submit' className='ls-login-button' onClick={() => { this.submitHandler() }}>Sign Up</button>
                         </div>
-                    </form>
+                    {/* </form> */}
                 </div>
             </>
-        )
+        ):<Navigate to="/Home"/>
     }
 }
 

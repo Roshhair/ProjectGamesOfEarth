@@ -5,7 +5,7 @@ export const EventCard = (props) => {
   // console.log(event)
   return (
     <div className='eventcard_maindiv eventcard_col-3 eventcard_clearfix'>
-      <a href='/home' className='eventcard_a'>
+      <a href='/Home' className='eventcard_a'>
       <div className='eventcard_name eventcard_div_margin'>{event.eventName}</div>
       <div className='eventcard_color_white eventcard_div_padding eventcard_div_color eventcard_div_margin eventcard_text'>{event.sports}</div>
       <div className='eventcard_color_white eventcard_div_padding eventcard_div_color eventcard_text clearfix eventcard_div_margin'>

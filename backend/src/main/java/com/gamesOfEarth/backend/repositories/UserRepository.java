@@ -9,4 +9,6 @@ import com.gamesOfEarth.backend.entitybeans.User;
 public interface UserRepository extends JpaRepository<User, Integer> {
 	@Query("select u from User u where u.email=:emailID and u.password=:passwordID")
 	public User getUserBy(String emailID,String passwordID);
+	@Query("select u from User u where u.email=:emailid")
+	public User getUserByEmail(String emailid);
 }

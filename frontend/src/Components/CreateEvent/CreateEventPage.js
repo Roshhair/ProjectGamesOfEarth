@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Navigate } from 'react-router-dom';
 // import { AddFeatures } from './AddFeatures/AddFeatures'
 import './CreateEvent.css'
 // import NameSportsAndType from './NameSportsAndTypes/NameSportsAndType'
@@ -52,6 +53,7 @@ export default class CreateEventPage extends Component {
                 4: false,
                 5: false
             },
+            redirect:false
         }
     }
     setValues(event) {
@@ -94,6 +96,7 @@ export default class CreateEventPage extends Component {
             eventFeature:str
         }
         console.log(data)
+        this.setState({...this.state,redirect:true})
         //Axois Code to trasfer data
     }
     render() {
@@ -101,7 +104,7 @@ export default class CreateEventPage extends Component {
             if else statement here....for navigation
             cancel and submit have navigate to the dasshboard
         */ 
-        return (
+        return !this.state.redirect?(
             <div>
                 <div className='create_event_form col-12'>
                     <div className='create_event_text'>Create Event</div>
@@ -164,7 +167,7 @@ export default class CreateEventPage extends Component {
                     <hr className='create_event_hr' />
                     <div className='clearfix col-12'>
                         <span className='create_event_float_left create_event_margin_left'>
-                            <button className='create_event_button' onClick={() => { console.log(this.state) }}>Cancel</button>
+                            <button className='create_event_button' onClick={() => {this.setState({...this.state,redirect:true})}}>Cancel</button>
                         </span>
                         <span className='create_event_float_right create_event_margin_right'>
                             <button className='create_event_button' onClick={(event)=>{this.submitHandler(event)}}>Submit</button>
@@ -172,6 +175,6 @@ export default class CreateEventPage extends Component {
                     </div>
                 </div>
             </div>
-        )
+        ):<Navigate to='/Dashboard'/>
     }
 }
