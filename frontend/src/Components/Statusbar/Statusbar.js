@@ -50,7 +50,7 @@ function Statusbar() {
     <div>
       <div className='main_div_status clearfix div_red'>
         <div className='status_div1'>
-          Games Of Earth
+          {event.name}
         </div>
         <div className='status_div2 clearfixdiv_red'>
           <button className='status_button' onClick={() => {
@@ -85,7 +85,7 @@ function Statusbar() {
             setAuction(false);
             setBudgetExtimation(false);
             setExpanseTracker(false)
-          }}>Bulk registration</button>
+          }}>Team Registration</button>
           <button className='status_button' onClick={() => {
             setDetails(false);
             setPlayers(false);
@@ -96,7 +96,7 @@ function Statusbar() {
             setAuction(false);
             setBudgetExtimation(false);
             setExpanseTracker(false)
-          }}>Manager control</button>
+          }}>Manager</button>
           <button className='status_button' onClick={() => {
             setDetails(false);
             setPlayers(false);
@@ -107,7 +107,7 @@ function Statusbar() {
             setAuction(false);
             setBudgetExtimation(false);
             setExpanseTracker(false)
-          }}>match maker</button>
+          }}>Matchs Adder</button>
           <button className='status_button' onClick={() => {
             setDetails(false);
             setPlayers(false);
@@ -118,7 +118,7 @@ function Statusbar() {
             setAuction(false);
             setBudgetExtimation(false);
             setExpanseTracker(false)
-          }}>match updater</button>
+          }}>Match Update</button>
           <button className='status_button' onClick={() => {
             setDetails(false);
             setPlayers(false);
@@ -129,7 +129,7 @@ function Statusbar() {
             setAuction(true);
             setBudgetExtimation(false);
             setExpanseTracker(false)
-          }}>auction</button>
+          }}>Auction</button>
           <button className='status_button' onClick={() => {
             setDetails(false);
             setPlayers(false);
@@ -140,7 +140,7 @@ function Statusbar() {
             setAuction(false);
             setBudgetExtimation(true);
             setExpanseTracker(false)
-          }}>budget estimation</button>
+          }}>Budget Management</button>
           <button className='status_button' onClick={() => {
             setDetails(false);
             setPlayers(false);
@@ -152,8 +152,8 @@ function Statusbar() {
             setBudgetExtimation(false);
             setExpanseTracker(true)
           }}>expense tracker</button>
-          <button className='status_button'>expense dashboard</button>
-          <button className='status_button'>scoreboard</button>
+          {/* <button className='status_button'>expense dashboard</button>
+          <button className='status_button'>scoreboard</button> */}
         </div>
 
       </div>
