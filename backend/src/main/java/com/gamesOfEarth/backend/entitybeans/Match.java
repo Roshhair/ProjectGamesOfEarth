@@ -3,8 +3,12 @@ package com.gamesOfEarth.backend.entitybeans;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -15,6 +19,7 @@ import jakarta.persistence.TemporalType;
 @Table(name="matches")
 public class Match {
 	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	@Column
 	@Temporal(TemporalType.DATE)
@@ -29,12 +34,15 @@ public class Match {
 	private String venue;
 	@ManyToOne
 	@JoinColumn(name="event_id",nullable = false)
+	@JsonIgnore
 	private Event event;
 	@ManyToOne
 	@JoinColumn(name="team_one_id",nullable = false)
+	@JsonIgnore
 	private Team teamOne;
 	@ManyToOne
 	@JoinColumn(name="team_two_id",nullable = false)
+	@JsonIgnore
 	private Team teamTwo;
 	public Match() {
 		// TODO Auto-generated constructor stub

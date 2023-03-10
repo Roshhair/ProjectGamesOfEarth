@@ -2,11 +2,14 @@ package com.gamesOfEarth.backend.entitybeans;
 
 
 import java.util.List;
-import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
@@ -20,22 +23,28 @@ import jakarta.persistence.Table;
 @Table(name="teams")
 public class Team {
 	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	@Column
 	private String name;
 	@ManyToOne
 	@JoinColumn(name="event_id" ,nullable = false)
+	@JsonIgnore
 	private Event event;
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name="players_in_teams",
 	joinColumns = @JoinColumn(name="team_id"),
 	inverseJoinColumns = @JoinColumn(name="player_id"))
+	@JsonIgnore
 	private List<Player> players;
 	@OneToOne(mappedBy = "team")
+	@JsonIgnore
 	private Manager manager;
 	@OneToMany(mappedBy = "teamOne",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Match> matches;
 	@OneToMany(mappedBy = "teamTwo",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Match> matches1;
 	
 	public Team() {

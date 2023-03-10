@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import http from '../axiosHandler'
 import './TeamRegistration.css'
 
 export default class TeamRegistration extends Component {
@@ -16,7 +17,7 @@ export default class TeamRegistration extends Component {
     async addPlayerHandler() {
         this.setState({ ...this.state, numberofPlayers: this.state.numberofPlayers + 1 })
         var data = {
-            playerName: this.state.tempPlayerName,
+            name: this.state.tempPlayerName,
             phone: this.state.tempPlayerPhone,
             age: this.state.tempPlayerAge
         }
@@ -48,11 +49,20 @@ export default class TeamRegistration extends Component {
         this.setState({ [name]: value });
     }
     submitHanler(){
-        const data={
-            teamName:this.state.teamName,
-            players:this.state.players
+        if(this.state.teamName===""){
+            return;
         }
-        console.log(data);
+        const data={
+            teamName:{name:this.state.teamName},
+            players:this.state.players,
+            id:this.props.id
+        }
+        http.post("/add-team",data).then(res=>{
+            if(res.status==200){
+                return;
+            }
+            alert("Something Went Wrong")
+        });
     }
     render() {
         return (
@@ -98,7 +108,7 @@ export default class TeamRegistration extends Component {
                             return (
                                 <div key={player} className='team_registration_team_card'>
                                     <div className='col-12'>
-                                        <div className='col-3 team_registration_inline team_registration_text_center'>{player.playerName}</div>
+                                        <div className='col-3 team_registration_inline team_registration_text_center'>{player.name}</div>
                                         <div className='col-3 team_registration_inline team_registration_text_center'>{player.phone}</div>
                                         <div className='col-3 team_registration_inline team_registration_text_center'>{player.age}</div>
                                         <div className='col-3 team_registration_inline team_registration_text_center'><button className='team_registration_team_card_button' onClick={()=>{this.deleteHandler(player.phone,player.playerName,player.age)}}>Delete</button></div>

@@ -1,8 +1,12 @@
 package com.gamesOfEarth.backend.entitybeans;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
@@ -12,6 +16,7 @@ import jakarta.persistence.Table;
 @Table(name="manager_events")
 public class ManagerEvent {
 	@Id 
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	@Column
 	private int playerBasePrice;
@@ -21,6 +26,7 @@ public class ManagerEvent {
 	private int maxSpending;
 	@OneToOne
 	@JoinColumn(name="event_id",nullable = false)
+	@JsonIgnore
 	private Event event;
 	public ManagerEvent() {
 		// TODO Auto-generated constructor stub

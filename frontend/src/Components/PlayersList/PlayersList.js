@@ -1,7 +1,18 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import http from '../axiosHandler'
 import './PlayersList.css'
 
-const PlayersList = () => {
+const PlayersList = (props) => {
+    const [players,setPlayers]=useState([])
+    const fetchplayers=()=>{
+        http.get(`/event-players/${props.id}`)
+        .then(res=>{
+            setPlayers(res.data);
+        })
+    }
+    useEffect(()=>{
+        fetchplayers();
+    },[])
     return (
         <div className='player_list'>
             <div className='player_list_text player_list_title'>Players Lists</div>

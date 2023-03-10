@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import http from '../axiosHandler';
 import './EventDetails.css'
 
 export default class EventDetails extends Component {
@@ -22,7 +23,12 @@ export default class EventDetails extends Component {
         this.setState({ [name]: value });
     }
     submitHandler(){
-        console.log(this.state);
+        http.post(`/add-playersFees/${this.props.id}`,{value:this.state.playerfees})
+        .then(res=>{
+            if(res.status==200){
+                alert("Added");
+            }
+        })
     }
     render() {
         return (

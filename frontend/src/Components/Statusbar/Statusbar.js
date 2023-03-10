@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom'
 import AuctionManager from '../AuctionManager/AuctionManager'
 import BudgetEstimation from '../BudgetEstimation/BudgetEstimation'
 import EventDetails from '../EventDetails/EventDetails'
@@ -20,6 +21,7 @@ function Statusbar() {
   const [auction, setAuction] = useState(false);
   const [budgetEstimation, setBudgetExtimation] = useState(false);
   const [expanseTracker, setExpanseTracker] = useState(false);
+  const urlData=useParams();
 
   return (
     <div>
@@ -133,15 +135,15 @@ function Statusbar() {
 
       </div>
       <div className='clearfix '>
-          {details&&<EventDetails/>}
-          {players&&<PlayersList/>}
-          {bulkRegistration&&<TeamRegistration/>}
-          {managerControl&&<Manager/>}
-          {matchMaker&&<MatchMaker/>}
-          {matchUpdater&&<UpdateMatch/>}
-          {auction&& <AuctionManager/>}
-          {budgetEstimation&&<BudgetEstimation/>}
-          {expanseTracker&& <ExpenseManagement/>}
+          {details&&<EventDetails id={urlData.id}/>}
+          {players&&<PlayersList id={urlData.id}/>}
+          {bulkRegistration&&<TeamRegistration id={urlData.id}/>}
+          {managerControl&&<Manager id={urlData.id}/>}
+          {matchMaker&&<MatchMaker id={urlData.id}/>}
+          {matchUpdater&&<UpdateMatch id={urlData.id}/>}
+          {auction&& <AuctionManager id={urlData.id}/>}
+          {budgetEstimation&&<BudgetEstimation id={urlData.id}/>}
+          {expanseTracker&& <ExpenseManagement id={urlData.id}/>}
         </div>
         <div className='status_div_color'>
           <input type='text' className='status_input' value={`http://localhost:3000/AddPlayer`} disabled/>

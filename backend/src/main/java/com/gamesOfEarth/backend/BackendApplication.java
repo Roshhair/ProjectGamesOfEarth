@@ -29,20 +29,20 @@ public class BackendApplication {
 				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/event-players/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/player-add/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/add-playersFees/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/add-team").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
 			}
 		};
 	}

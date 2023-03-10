@@ -3,7 +3,7 @@ package com.gamesOfEarth.backend.entitybeans;
 import java.sql.Date;
 import java.util.List;
 
-
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -36,30 +36,39 @@ public class Event {
 	private int playerRegistrationFee;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="user_id")
+	@JsonIgnore
 	private User user;
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name="features_in_events",
 	joinColumns = @JoinColumn(name="event_id"),
 	inverseJoinColumns =  @JoinColumn(name="feature_id"))
+	@JsonIgnore
 	private List<Feature> features;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="sport_id",nullable = false)
+	@JsonIgnore
 	private Sport sport;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="event_type_id",nullable = false)
+	@JsonIgnore
 	private EventType eventType;
 	@ManyToMany(fetch = FetchType.LAZY)
 	@JoinTable(name = "players_in_events",
 	joinColumns = @JoinColumn(name="event_id"),
 	inverseJoinColumns = @JoinColumn(name="player_id"))
+	@JsonIgnore
 	private List<Player> players;
 	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Team> teams;
 	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Match> matches;
 	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<BudgetEstimation> budgetEstimations;
-	@OneToOne(mappedBy = "event")
+	@OneToOne(mappedBy = "event",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private ManagerEvent managerEvent;
 	public Event() {
 		// TODO Auto-generated constructor stub

@@ -1,7 +1,8 @@
 package com.gamesOfEarth.backend.entitybeans;
 
 import java.util.List;
-import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -24,6 +25,7 @@ public class User {
 	@Column
 	private String password;
 	@OneToMany(mappedBy ="user",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Event> events;
 	public User() {
 		System.out.println("Constrctor called");

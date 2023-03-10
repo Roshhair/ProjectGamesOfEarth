@@ -2,6 +2,7 @@ import React from 'react'
 import './Manager.css'
 
 function Manager() {
+    
     return (
         <div className='manager_maindiv'>
             <div className='manager_container'>

@@ -1,7 +1,11 @@
 package com.gamesOfEarth.backend.entitybeans;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
@@ -11,14 +15,17 @@ import jakarta.persistence.Table;
 @Table(name="match_scorers")
 public class MatchScorer {
 	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	@Column
 	private int goalScored;
 	@ManyToOne
 	@JoinColumn(name="match_id",nullable = false)
+	@JsonIgnore
 	private Match match;
 	@ManyToOne
 	@JoinColumn(name="player_id",nullable = false)
+	@JsonIgnore
 	private Player player;
 	public MatchScorer() {
 		// TODO Auto-generated constructor stub

@@ -1,11 +1,15 @@
 package com.gamesOfEarth.backend.entitybeans;
 
 import java.util.List;
-import java.util.Set;
+//import java.util.Set;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
@@ -14,6 +18,7 @@ import jakarta.persistence.Table;
 @Table(name="players")
 public class Player {
 	@Id
+	@GeneratedValue(strategy = GenerationType.TABLE)
 	private int id;
 	@Column
 	private String name;
@@ -26,12 +31,16 @@ public class Player {
 	@Column
 	private int age;
 	@ManyToMany(mappedBy = "players",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Event> events;
 	@ManyToMany(mappedBy = "players",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Team> teams;
 	@OneToMany(mappedBy = "player",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<MatchScorer> matcheScorers;
 	@OneToMany(mappedBy = "player",fetch = FetchType.LAZY)
+	@JsonIgnore
 	private List<Auction> auctions;
 	public Player() {
 		// TODO Auto-generated constructor stub
