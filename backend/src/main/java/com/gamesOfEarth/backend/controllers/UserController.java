@@ -1,6 +1,8 @@
 package com.gamesOfEarth.backend.controllers;
 
 
+import javax.net.ssl.HttpsURLConnection;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -42,6 +44,14 @@ public class UserController {
 	@GetMapping("/getUser")
 	public User getLogInedUser(HttpSession session) {
 		return (User)session.getAttribute("user");
+	}
+	@GetMapping("/isLogged")
+	public boolean getLogged(HttpSession session) {
+		return session.getAttribute("user")==null?false:true;
+	}
+	@GetMapping("/log-out")
+	public void logOut(HttpSession session) {
+		session.invalidate();
 	}
 //	@GetMapping("/navlinks")
 //	public Navbar getNavbaar(HttpSession session) {

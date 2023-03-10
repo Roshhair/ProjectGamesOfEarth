@@ -20,8 +20,9 @@ public class BackendApplication {
 				registry.addMapping("/user-login").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/get-events").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/create-user").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/navlinks").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/log-out").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/getUser").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/isLogged").allowedOrigins("http://localhost:3000").allowCredentials(true);
 			}
 		};
 	}

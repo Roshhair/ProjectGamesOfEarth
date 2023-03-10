@@ -23,29 +23,12 @@ import AuctionManager from './Components/AuctionManager/AuctionManager';
 import EventDetails from './Components/EventDetails/EventDetails';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import http from './Components/axiosHandler'
-import { Signin } from './Components/LoginAndSignup/Signin';
 
 import React, { memo, useEffect, useState } from 'react'
 
 const App = () => {
   const [data,setData]=useState({
-    navbarLinks: [
-    //           id: 1,
-    //           name: "About Us",
-    //           css:'nav_a nav_text_only nav_li_a_text'
-    //         },
-    //         {
-    //           id: 2,
-    //           name: "Docs",
-    //           css:'nav_a nav_text_only nav_li_a_text'
-    //         },
-    //         {
-    //           id: 3,
-    //           name: "Home",
-    //           css:'nav_a nav_text_only nav_li_a_text'
-    //         }
-              "About Us","Docs","Home"
-            ],
+    navbarLinks: ["About Us","Docs","Home"],
       isLoggined:false
   })
   const [events,setEvents]=useState([]);
@@ -54,13 +37,13 @@ const App = () => {
       setEvents(res.data);
     })
   }
-  const fetchData=()=>{
-    http.get("/navlinks")
-    .then((res)=>{console.log(res.data)})
+  const fetchisLoggedin=()=>{
+    http.get("/isLogged").then(res=>{setData({...data,isLoggined:res.data}) ;console.log(res.data)})
   }
   useEffect(()=>{
     fetchEvents()
-    fetchData()
+    fetchisLoggedin()
+    // fetchData()
   },[]);
   const [footer,setFooter]=useState([
               {
@@ -96,11 +79,7 @@ const App = () => {
              <Route path='/SignUpOrLogin' element={<LoginAndSignup/>}/>
              <Route path='/Dashboard' element={<><Navigation data={data}/><DashBoard/><Footer data={footer} /></>}/>
              <Route path='/CreateEvent' element={<><Navigation data={data}/><CreateEventPage/><Footer data={footer} /></>}/>
-             {/* <Route path='/SignIn' element={<Signin/>}/> */}
-            {/* <Route path='/SignInSignup' element={()=><LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}}/>}/> */}
-
-            {/* {this.state.events.map((event)=>{return(<Route path={`/${event.id}`} element={<Statusbar events={event}/>}/>)
-             })} */}
+             
            </Routes>
          </BrowserRouter>
 

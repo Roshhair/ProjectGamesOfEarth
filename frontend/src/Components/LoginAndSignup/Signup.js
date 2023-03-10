@@ -51,7 +51,7 @@ export class Signup extends Component {
 
     submitHandler() {
         if(this.state.noError){
-            axios.post("http://localhost:9000/create-user",{name:this.state.name,email:this.state.emailID,password:this.state.password})
+            http.post("/create-user",{name:this.state.name,email:this.state.emailID,password:this.state.password})
             .then((res)=>{if(res.data){
                 this.setState({...this.state,navigate:true})
             }
