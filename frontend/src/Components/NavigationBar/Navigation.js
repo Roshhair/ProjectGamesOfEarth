@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom';
 import http from '../axiosHandler';
+// import DashBoard from '../DashBoard/DashBoard';
 import './Navigation.css'
 // import  img from './hamburgur.svg'
 
 export const Navigation = (props) => {
     //Importing the array of the navlinks when not logined.....
     const navbarLinks = props.data.navbarLinks;
+    const [logedIn,setLogedIn]=useState(["About Us","Docs","Dashboard","Home"]);
+    
     //   const [navigateTo,setNavigateTo]=useState()
       const [isLogged,setIsLogged]=useState(false);
     const [login,setLogin]=useState(true);
@@ -23,7 +26,6 @@ export const Navigation = (props) => {
             setLogin(false)
         })
     }
-
     //saving state of login
     // const isLogined = props.data.isLogined
     //change state of login
@@ -41,7 +43,9 @@ export const Navigation = (props) => {
                             <li ><a href='/' className='nav_head nav_text_only'>GAMESOFEARTH</a></li>
                             <li className='nav_a'>{!isLogged?<button  className='nav_li_button' onClick={()=>{setLogin(false)}}>Login</button>:<button  className='nav_li_button' onClick={()=>{logout()}}>Logout</button>}</li>
 
-                            {navbarLinks.map((data) => {
+                            {isLogged? logedIn.map((data) => {
+                                return <li key={data}><a href={`/${data}`} className='nav_a nav_text_only nav_li_a_text' >{data}</a></li>
+                            }):navbarLinks.map((data) => {
                                 return <li key={data}><a href={`/${data}`} className='nav_a nav_text_only nav_li_a_text' >{data}</a></li>
                             })}
                         </ul>

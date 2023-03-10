@@ -24,7 +24,7 @@ public class User {
 	private String email;
 	@Column
 	private String password;
-	@OneToMany(mappedBy ="user",fetch = FetchType.LAZY)
+	@OneToMany(mappedBy ="user")
 	@JsonIgnore
 	private List<Event> events;
 	public User() {

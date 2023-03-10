@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import AuctionManager from '../AuctionManager/AuctionManager'
+import http from '../axiosHandler'
 import BudgetEstimation from '../BudgetEstimation/BudgetEstimation'
 import EventDetails from '../EventDetails/EventDetails'
 import ExpenseManagement from '../ExpenseManagement/ExpenseManagement'
@@ -12,6 +13,8 @@ import UpdateMatch from '../UpdateMatch/UpdateMatch'
 import './Statusbar.css'
 
 function Statusbar() {
+  const [event,setEvent]=useState({});
+  const [sport,setSport]=useState({});
   const [details, setDetails] = useState(true)
   const [players, setPlayers] = useState(false)
   const [bulkRegistration, setBulkRegistration] = useState(false);
@@ -22,7 +25,27 @@ function Statusbar() {
   const [budgetEstimation, setBudgetExtimation] = useState(false);
   const [expanseTracker, setExpanseTracker] = useState(false);
   const urlData=useParams();
+  // console.log(urlData)
+  const eventFetcher=()=>{
+    http.get(`/event/${urlData.id}`)
+    .then(res=>{
+      setEvent(res.data);
+      // console.log(res)
+    })
+  }
+  const sportsFetcher=()=>{
+    http.get("/get-user-sport")
+    .then(res=>{
+      setSport(res.data)
+    })
 
+  }
+  useEffect(()=>{
+    eventFetcher()
+    sportsFetcher()
+  },[])
+
+  console.log(sport)
   return (
     <div>
       <div className='main_div_status clearfix div_red'>
@@ -135,7 +158,7 @@ function Statusbar() {
 
       </div>
       <div className='clearfix '>
-          {details&&<EventDetails id={urlData.id}/>}
+          {details&&<EventDetails data={event} sport={sport}/>}
           {players&&<PlayersList id={urlData.id}/>}
           {bulkRegistration&&<TeamRegistration id={urlData.id}/>}
           {managerControl&&<Manager id={urlData.id}/>}

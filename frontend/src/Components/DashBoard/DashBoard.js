@@ -1,22 +1,22 @@
 
 import React, { useEffect, useState } from 'react'
-import http from "../axiosHandler"
+// import http from "../axiosHandler"
 import './DashBoard.css'
 import EventCardBox from './EventBox/EventCardBox'
+import http from '../axiosHandler'
 
  const DashBoard = () => {
   const[events,setEvents]=useState([]);
   const eventsFetcher=()=>{
   http.get("/get-user-events").then(res=>{
-    if(res.data.lenght>0){
       setEvents(res.data);
-    }
-    
+    console.log(res);
   })
   }
   useEffect(()=>{
     eventsFetcher()
   },[])
+  // console.log(events)
   return (
     <>
       <div className='dashboard'>

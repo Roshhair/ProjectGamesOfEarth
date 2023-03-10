@@ -5,13 +5,13 @@ export const EventCard = (props) => {
   // console.log(event)
   return (
     <div className='eventcard_maindiv eventcard_col-3 eventcard_clearfix'>
-      <a href='/Home' className='eventcard_a'>
-      <div className='eventcard_name eventcard_div_margin'>{event.eventName}</div>
-      <div className='eventcard_color_white eventcard_div_padding eventcard_div_color eventcard_div_margin eventcard_text'>{event.sports}</div>
+      <a href={`/Event/${event.id}`} className='eventcard_a'>
+      <div className='eventcard_name eventcard_div_margin'>{event.name}</div>
+      <div className='eventcard_color_white eventcard_div_padding eventcard_div_color eventcard_div_margin eventcard_text'>Sports here</div>
       <div className='eventcard_color_white eventcard_div_padding eventcard_div_color eventcard_text clearfix eventcard_div_margin'>
         <ul className='eventcard_list'>
-          <li className='eventcard_list_items eventcard_float_left'>Start : {event.start}</li>
-          <li className='eventcard_list_items eventcard_float_right'>End : {event.end}</li>
+          <li className='eventcard_list_items eventcard_float_left'>Start : {event.startDate}</li>
+          <li className='eventcard_list_items eventcard_float_right'>End : {event.endDate}</li>
         </ul>
       </div>
       <div className='eventcard_color_white eventcard_div_padding  eventcard_text eventcard_div_color clearfix eventcard_div_margin'>

@@ -23,7 +23,7 @@ export default class EventDetails extends Component {
         this.setState({ [name]: value });
     }
     submitHandler(){
-        http.post(`/add-playersFees/${this.props.id}`,{value:this.state.playerfees})
+        http.post(`/add-playersFees/${this.state.playerfees}`)
         .then(res=>{
             if(res.status==200){
                 alert("Added");
@@ -31,17 +31,18 @@ export default class EventDetails extends Component {
         })
     }
     render() {
+        console.log(this.props.data)
         return (
             <div className='event_details'>
                 <div>
-                    <div className='event_details_text'>Venue: Place</div>
-                    <div className='event_details_text'>Sports : Football</div>
-                    <div className='event_details_text'>From dateOne to dataTwo</div>
+                    <div className='event_details_text'>Venue: {this.props.data.venue}</div>
+                    <div className='event_details_text'>Sports : {this.props.sport.name}</div>
+                    <div className='event_details_text'>From {this.props.data.startDate} to {this.props.data.endDate}</div>
                 </div>
                 <hr/>
                 <div>
                     <div><input className='event_details_input' type='number' name='playerfees' value={this.state.playerfees} onChange={(event)=>{this.setValues(event)}} placeholder='Player Registration Fees'/></div>
-                    <div><button className='event_details_button'>Add</button></div>
+                    <div><button className='event_details_button' onClick={()=>{this.submitHandler()}}>Add</button></div>
                 </div>
             </div>
         )

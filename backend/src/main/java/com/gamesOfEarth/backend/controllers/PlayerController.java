@@ -15,15 +15,18 @@ import com.gamesOfEarth.backend.entitybeans.Player;
 import com.gamesOfEarth.backend.services.EventService;
 import com.gamesOfEarth.backend.services.PlayerService;
 
+import jakarta.servlet.http.HttpSession;
+
 @RestController
 public class PlayerController {
 	@Autowired
 	private PlayerService playerService;
 	@Autowired
 	private EventService eventService;
-	@GetMapping("/event-players/{id}")
-	public List<Player> getPlayersByEvent(@PathVariable int id){
-		return playerService.getAllPlayersByEventID(id);
+	@GetMapping("/event-players")
+	public List<Player> getPlayersByEvent(HttpSession session){
+		Event event=(Event)session.getAttribute("Event");
+		return playerService.getAllPlayersByEventID(event.getId());
 	}
 	@PostMapping("/player-add/{id}")
 	public void addPlayer(@RequestParam Player player,@PathVariable int id) {

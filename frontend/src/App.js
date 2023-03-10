@@ -86,9 +86,9 @@ const App = () => {
              <Route path='/CreateEvent' element={<><Navigation data={data}/><EventCasing/><Footer data={footer} /></>}/>
              {/* {data.isLoggined&&<Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>} */}
              <Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>
-             <Route path="/Event/" element={<><Navigation data={data}/><Statusbar/><Footer data={footer} /></>}/>
+             <Route path="/Event/:id" element={<><Navigation data={data}/><Statusbar/><Footer data={footer} /></>}/>
              {/* Add the path="/Event/:id" */}
-             <Route path="/AddPlayer" element={<PlayerRegistrationWrapper/>}/>
+             <Route path="/AddPlayer" element={<><Navigation data={data}/><PlayerRegistrationWrapper/><Footer data={footer} /></>}/>
            </Routes>
          </BrowserRouter>
          

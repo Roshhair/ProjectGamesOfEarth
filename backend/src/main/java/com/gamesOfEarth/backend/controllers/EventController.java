@@ -16,7 +16,9 @@ import com.gamesOfEarth.backend.entitybeans.Team;
 import com.gamesOfEarth.backend.entitybeans.User;
 import com.gamesOfEarth.backend.services.EventService;
 
+import jakarta.persistence.criteria.CriteriaBuilder.In;
 import jakarta.servlet.http.HttpSession;
+import jakarta.websocket.Session;
 
 @RestController
 public class EventController {
@@ -30,14 +32,23 @@ public class EventController {
 	@GetMapping("/get-user-events")
 	public List<Event> getAllUserEvent(HttpSession session){
 		User user=(User) session.getAttribute("user");
+		System.out.println(user==null);
 		if(user==null) {
 			return null;
 		}
 		return eventService.getEventForUsers(user.getId());
 	}
-	@PostMapping("/add-playersFees/{id}")
-	public void AddFees(@PathVariable int id,@RequestParam int value) {
-		eventService.updateRegistrationFee(id, value);
+	@GetMapping("/event/{id}")
+	public Event getEvent(@PathVariable int id,HttpSession session) {
+		Event event=eventService.getEventByID(id);
+		session.setAttribute("Event", event);
+		return eventService.getEventByID(id);
+	}
+	@PostMapping("/add-playersFees/{value}")
+	public void AddFees(@PathVariable int value,HttpSession session) {
+		Event event=(Event)session.getAttribute("Event");
+//		System.out.println(value);
+		eventService.updateRegistrationFee(event.getId(), value);
 	}
 	@PostMapping("/add-team")
 	public void addTeam(@RequestParam Team teamName,@RequestParam Player[] players,@RequestParam int id){

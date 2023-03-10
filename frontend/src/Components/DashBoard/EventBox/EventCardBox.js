@@ -13,7 +13,7 @@ export default class EventCardBox extends Component {
   }
   render() {
     // const events=this.props.events;
-    console.log(this.props.events)
+    // console.log(this.props.events)
     return this.state.redirect?(
       <div>
         <div className='eventcardbox_div_color eventcardbox_clearfix'>

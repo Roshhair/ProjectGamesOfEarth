@@ -27,13 +27,12 @@ public class BackendApplication {
 				registry.addMapping("/get-sports").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/get-event-types").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/event-players/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/event-players").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/player-add/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("/add-playersFees/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/add-team").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
-				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/event/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/add-playersFees/{value}").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-user-sport").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("").allowedOrigins("http://localhost:3000").allowCredentials(true);
