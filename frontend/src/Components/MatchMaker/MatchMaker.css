@@ -11,7 +11,7 @@
     /* padding-left: 40%; */
     text-align: center;
     padding-top: 1vw;
-    background-color: #acabab;
+    background-color: #303030;
 }
 .legs_text{
     font-size: x-large;
@@ -19,7 +19,7 @@
     margin-left: 3%;
 }
 .total_div{
-    background-color: #acabab;
+    background-color: #343434;
     /* border: 1px solid blue; */
     padding-top: 1vw;
     text-align: center;
@@ -35,7 +35,7 @@
 .create_match{
     font-size: 3vw;
     /* color: white; */
-    background-color: #808080;
+    background-color: #282828;
     /* text-align: center; */
    
     border: 2px solid rgb(90, 87, 87);
@@ -45,7 +45,7 @@
    
 }
 .match{
-    background-color: #acabab;
+    background-color: #3b3b3b;
     padding-top: 2%;
     text-align: center;
     font-size: xx-large;

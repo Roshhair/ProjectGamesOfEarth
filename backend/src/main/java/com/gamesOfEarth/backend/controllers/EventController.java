@@ -21,5 +21,13 @@ public class EventController {
 //		User user=(User)session.getAttribute("user");
 		return eventService.getAllEvents();
 	}
+	@GetMapping("/get-user-events")
+	public List<Event> getAllUserEvent(HttpSession session){
+		User user=(User) session.getAttribute("user");
+		if(user==null) {
+			return null;
+		}
+		return eventService.getEventForUsers(user.getId());
+	}
 	
 }

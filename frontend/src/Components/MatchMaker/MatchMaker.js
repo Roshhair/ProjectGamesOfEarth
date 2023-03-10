@@ -41,7 +41,7 @@ function MatchMaker() {
                 </div>
             </div>
             <div className='create_match' name="matchescreated">Matches Created</div>
-            <div style={{ textAlign: "center", backgroundColor: "#acabab", fontSize: "x-large" }}> Matches</div>
+            <div style={{ textAlign: "center", backgroundColor: "RGB(40,40,40)", fontSize: "x-large" }}> Matches</div>
 
             <div className='col-12'>
                     <div className='matches_view'>

@@ -20,4 +20,7 @@ public class EventService {
 	public Event addEvent(Event event) {
 		return eventRepository.save(event);
 	}
+	public List<Event> getEventForUsers(int id){
+		return eventRepository.getUserEvents(id);
+	}
 }

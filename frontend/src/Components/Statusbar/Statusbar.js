@@ -1,30 +1,150 @@
-import React from 'react'
+import React, { useState } from 'react'
+import AuctionManager from '../AuctionManager/AuctionManager'
+import BudgetEstimation from '../BudgetEstimation/BudgetEstimation'
+import EventDetails from '../EventDetails/EventDetails'
+import ExpenseManagement from '../ExpenseManagement/ExpenseManagement'
+import Manager from '../Manager/Manager'
+import MatchMaker from '../MatchMaker/MatchMaker'
+import PlayerRegistration from '../PlayerRegistration/PlayerRegistration'
+import TeamRegistration from '../TeamRegistration/TeamRegistration'
+import UpdateMatch from '../UpdateMatch/UpdateMatch'
 import './Statusbar.css'
 
 function Statusbar() {
-  return (
-    <div className='main_div_status'>
-        <div className='status_div1'>
-            Games Of Earth
+  const [details, setDetails] = useState(true)
+  const [players, setPlayers] = useState(false)
+  const [bulkRegistration, setBulkRegistration] = useState(false);
+  const [managerControl, setManagerControl] = useState(false);
+  const [matchMaker, setMatchMaker] = useState(false);
+  const [matchUpdater, setMatchUpdater] = useState(false);
+  const [auction, setAuction] = useState(false);
+  const [budgetEstimation, setBudgetExtimation] = useState(false);
+  const [expanseTracker, setExpanseTracker] = useState(false);
 
+  return (
+    <div>
+      <div className='main_div_status clearfix div_red'>
+        <div className='status_div1'>
+          Games Of Earth
         </div>
-        <div className='status_div2'>
-            <button className='status_button'>Details</button>
-            <button className='status_button'>Players</button>
-            <button className='status_button'>Bulk registration</button>
-            <button className='status_button'>Manager control</button>
-            <button className='status_button'>match maker</button>
-            <button className='status_button'>match updater</button>
-            <button className='status_button'>auction</button>
-            <button className='status_button'>budget estimation</button>
-            <button className='status_button'>expense tracker</button>
-            <button className='status_button'>expense dashboard</button>
-            <button className='status_button'>scoreboard</button>
+        <div className='status_div2 clearfixdiv_red'>
+          <button className='status_button' onClick={() => {
+            setDetails(true);
+            setPlayers(false);
+            setBulkRegistration(false);
+            setManagerControl(false);
+            setMatchMaker(false);
+            setMatchUpdater(false);
+            setAuction(false);
+            setBudgetExtimation(false);
+            setExpanseTracker(false)
+          }} >Details</button>
+          <button className='status_button' onClick={() => {
+            setDetails(false);
+            setPlayers(true);
+            setBulkRegistration(false);
+            setManagerControl(false);
+            setMatchMaker(false);
+            setMatchUpdater(false);
+            setAuction(false);
+            setBudgetExtimation(false);
+            setExpanseTracker(false)
+          }}>Players</button>
+          <button className='status_button' onClick={() => {
+            setDetails(false);
+            setPlayers(false);
+            setBulkRegistration(true);
+            setManagerControl(false);
+            setMatchMaker(false);
+            setMatchUpdater(false);
+            setAuction(false);
+            setBudgetExtimation(false);
+            setExpanseTracker(false)
+          }}>Bulk registration</button>
+          <button className='status_button' onClick={() => {
+            setDetails(false);
+            setPlayers(false);
+            setBulkRegistration(false);
+            setManagerControl(true);
+            setMatchMaker(false);
+            setMatchUpdater(false);
+            setAuction(false);
+            setBudgetExtimation(false);
+            setExpanseTracker(false)
+          }}>Manager control</button>
+          <button className='status_button' onClick={() => {
+            setDetails(false);
+            setPlayers(false);
+            setBulkRegistration(false);
+            setManagerControl(false);
+            setMatchMaker(true);
+            setMatchUpdater(false);
+            setAuction(false);
+            setBudgetExtimation(false);
+            setExpanseTracker(false)
+          }}>match maker</button>
+          <button className='status_button' onClick={() => {
+            setDetails(false);
+            setPlayers(false);
+            setBulkRegistration(false);
+            setManagerControl(false);
+            setMatchMaker(false);
+            setMatchUpdater(true);
+            setAuction(false);
+            setBudgetExtimation(false);
+            setExpanseTracker(false)
+          }}>match updater</button>
+          <button className='status_button' onClick={() => {
+            setDetails(false);
+            setPlayers(false);
+            setBulkRegistration(false);
+            setManagerControl(false);
+            setMatchMaker(false);
+            setMatchUpdater(false);
+            setAuction(true);
+            setBudgetExtimation(false);
+            setExpanseTracker(false)
+          }}>auction</button>
+          <button className='status_button' onClick={() => {
+            setDetails(false);
+            setPlayers(false);
+            setBulkRegistration(false);
+            setManagerControl(false);
+            setMatchMaker(false);
+            setMatchUpdater(false);
+            setAuction(false);
+            setBudgetExtimation(true);
+            setExpanseTracker(false)
+          }}>budget estimation</button>
+          <button className='status_button' onClick={() => {
+            setDetails(false);
+            setPlayers(false);
+            setBulkRegistration(false);
+            setManagerControl(false);
+            setMatchMaker(false);
+            setMatchUpdater(false);
+            setAuction(false);
+            setBudgetExtimation(false);
+            setExpanseTracker(true)
+          }}>expense tracker</button>
+          <button className='status_button'>expense dashboard</button>
+          <button className='status_button'>scoreboard</button>
         </div>
-    
-       
-      
+
+      </div>
+      <div className='clearfix '>
+          {details&&<EventDetails/>}
+          {players&&<PlayerRegistration/>}
+          {bulkRegistration&&<TeamRegistration/>}
+          {managerControl&&<Manager/>}
+          {matchMaker&&<MatchMaker/>}
+          {matchUpdater&&<UpdateMatch/>}
+          {auction&& <AuctionManager/>}
+          {budgetEstimation&&<BudgetEstimation/>}
+          {expanseTracker&& <ExpenseManagement/>}
+        </div>
     </div>
+
   )
 }
 

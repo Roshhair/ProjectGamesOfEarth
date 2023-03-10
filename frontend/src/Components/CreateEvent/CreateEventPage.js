@@ -9,40 +9,10 @@ export default class CreateEventPage extends Component {
         super(props)
 
         this.state = {
-            features: [
-                {
-                    id: 1,
-                    feature: "Player Registration"
-                },
-                {
-                    id: 2,
-                    feature: "Fee Collection And Confirmation"
-                },
-                {
-                    id: 3,
-                    feature: "Expanse Manager"
-                },
-                {
-                    id: 4,
-                    feature: "Auction Features"
-                },
-                {
-                    id: 5,
-                    feature: "Manager Management"
-                }
-            ],
-            eventTypes: [
-                {
-                    id: 1,
-                    eventTypeName: "Simple"
-                },
-                {
-                    id: 2,
-                    eventTypeName: "Auction"
-                }
-            ],
+            features: this.props.features,
+            eventTypes: this.props.eventTypes,
             eventName: "",
-            sports: "",
+            sports: "select",
             startDate: "",
             eventType: "",
             endDate: "",
@@ -78,9 +48,9 @@ export default class CreateEventPage extends Component {
     submitHandler(event){
         // event.preventDefault();
         var str=[]
-        for(const d in this.state.eventFeature){
+        for(const d in this.props.features){
             if(this.state.eventFeature[d]==true){
-                str=[...str,this.state.features[d-1]]
+                str=[...str,this.props.features[d-1]]
                 // console.log(this.state.features[d].feature)
                 // console.log(d)
                 // console.log(typeof(d))
@@ -88,18 +58,21 @@ export default class CreateEventPage extends Component {
         }
         console.log(str)
         const data={
-            eventName:this.state.eventName,
-            sports:this.state.sports,
+            name:this.state.eventName,
+            sport:this.state.sports,
             startDate:this.state.startDate,
             eventType:this.state.eventType,
             endDate:this.state.endDate,
-            eventFeature:str
+            features:str,
+            venue:"",
+
         }
         console.log(data)
         this.setState({...this.state,redirect:true})
         //Axois Code to trasfer data
     }
     render() {
+        console.log(this.state)
         /*
             if else statement here....for navigation
             cancel and submit have navigate to the dasshboard
@@ -117,8 +90,11 @@ export default class CreateEventPage extends Component {
                                 </div>
                                 <div>
                                     <select className='create_event_input_select' value={this.state.sports} name='sports' onChange={(event) => { this.setValues(event) }}>
-                                        <option className='create_event_input_options' value='select' >Select Sport</option>
-                                        <option className='create_event_input_options' value="Rushui">Rushui</option>
+                                        <option className='create_event_input_options' value='select' disabled>Select Sport</option>
+                                        {this.props.sports.map((sport)=>{
+                                            return <option key={sport.id} className='create_event_input_options' value={sport.name} >{sport.name}</option>
+                                        })}
+                                        {/* <option className='create_event_input_options' value="Rushui">Rushui</option> */}
                                     </select>
                                 </div>
                                 <div >
@@ -131,10 +107,10 @@ export default class CreateEventPage extends Component {
                                 <div className='create_event_margin_bottm'>
                                     <div className='create_event_list_span'>Event Type</div>
                                     <ul className='create_event_list '>
-                                        {this.state.eventTypes.map((eventType) => {
+                                        {this.props.eventTypes.map((eventType) => {
                                             return (
                                                 <li key={eventType.id} className='create_event_list_items'>
-                                                    <input type='radio' name='eventType' value={eventType.eventTypeName} onChange={(event) => { this.setValues(event) }} className='create_event_radio' /><span className='create_event_list_span'>{eventType.eventTypeName}</span>
+                                                    <input type='radio' name='eventType' value={eventType.name} onChange={(event) => { this.setValues(event) }} className='create_event_radio' /><span className='create_event_list_span'>{eventType.name}</span>
                                                 </li>
                                             )
                                         })}
@@ -152,10 +128,10 @@ export default class CreateEventPage extends Component {
                                 <div className='create_event_div_list'>
                                     <div className='create_event_title_features'>Add Features</div>
                                     <ul className='create_event_list_features '>
-                                        {this.state.features.map((feature) => {
+                                        {this.props.features.map((feature) => {
                                             return (
                                                 <li key={feature.id} className='create_event_list_items'>
-                                                    <input type='checkbox' name={feature.id} className='create_event_radio' value={feature.feature} onChange={(event) => { this.featureHandler(event) }} /><span className='create_event_list_span'>{feature.feature}</span>
+                                                    <input type='checkbox' name={feature.id} className='create_event_radio' value={feature.name} onChange={(event) => { this.featureHandler(event) }} /><span className='create_event_list_span'>{feature.name}</span>
                                                 </li>
                                             )
                                         })}

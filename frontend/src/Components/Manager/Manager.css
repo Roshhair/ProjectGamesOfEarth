@@ -68,7 +68,7 @@
 .pay_details{
     font-size: 3vw;
     /* color: white; */
-    background-color: #808080;
+    background-color: #222222;
     /* text-align: center; */
     padding: 0.6vw;
    
@@ -96,10 +96,10 @@
     font-size: 2vw;
     padding: 0.6vw;
     /* color: white; */
-    background-color: #808080;
+    background-color: #272727;
     /* text-align: center; */
    
-    border: 2px solid rgb(90, 87, 87);  
+    border: 2px solid rgb(48, 48, 48);  
 }
 .manager_div{
     display: inline-block;
@@ -117,7 +117,8 @@
 
 }
 .manager_maindiv{
-    background-color: rgb(171, 165, 165);
+    background-color: rgb(56, 56, 56);
+    color: white;
 }
 .manager_list{
     /* border: 1px solid red; */

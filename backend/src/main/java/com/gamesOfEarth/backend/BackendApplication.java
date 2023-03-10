@@ -23,6 +23,10 @@ public class BackendApplication {
 				registry.addMapping("/log-out").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/getUser").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/isLogged").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-user-events").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-sports").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-event-types").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
 			}
 		};
 	}

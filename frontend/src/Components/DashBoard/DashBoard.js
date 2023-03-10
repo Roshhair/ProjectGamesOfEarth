@@ -1,45 +1,30 @@
-import React, { Component } from 'react'
-// import CreateEvent from './CreateEvent/CreateEvent'
 
+import React, { useEffect, useState } from 'react'
+import http from "../axiosHandler"
 import './DashBoard.css'
 import EventCardBox from './EventBox/EventCardBox'
 
-export default class DashBoard extends Component {
-  constructor(props) {
-    super(props)
-  
-    this.state = {
-      isAddEvent:false,
-      events:[
-        {
-          eventName:"FootBall",
-          sports:"Football",
-          start:'12/12/2000',
-          end:'12/1/2001',
-          venue:'Pune'
-        },
-        {
-          eventName:"Cricket",
-          sports:"Cricket",
-          start:'12/12/2000',
-          end:'12/1/2001',
-          venue:'Kothrud'
-        }
-      ]
+ const DashBoard = () => {
+  const[events,setEvents]=useState([]);
+  const eventsFetcher=()=>{
+  http.get("/get-user-events").then(res=>{
+    if(res.data.lenght>0){
+      setEvents(res.data);
     }
+    
+  })
   }
-  
-  render() {
-
-    return (
-      <>
+  useEffect(()=>{
+    eventsFetcher()
+  },[])
+  return (
+    <>
       <div className='dashboard'>
         <p className='dash_headder'>Welcome {"Users"}</p>
         <hr className='dash_line'/>
-        {this.state.isAddEvent?"data":<EventCardBox events={this.state.events}/>}
+        <EventCardBox events={events}/>
       </div>
       </>
-      
-    )
-  }
+  )
 }
+export default DashBoard

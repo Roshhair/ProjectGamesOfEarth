@@ -22,7 +22,7 @@ public class User {
 	private String email;
 	@Column
 	private String password;
-	@OneToMany(mappedBy ="user",fetch = FetchType.EAGER)
+	@OneToMany(mappedBy ="user",fetch = FetchType.LAZY)
 	private Set<Event> events;
 	public User() {
 		System.out.println("Constrctor called");
