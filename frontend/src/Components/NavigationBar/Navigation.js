@@ -49,5 +49,5 @@ export const Navigation = (props) => {
                 </nav>
             </div>
         </>
-    ):isLogged?<Navigate to="/SignUpOrLogin"/>:<Navigate to="/Home"/>
+    ):<Navigate to="/SignUpOrLogin"/>
 }

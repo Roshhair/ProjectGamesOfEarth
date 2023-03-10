@@ -78,10 +78,11 @@ const App = () => {
              <Route index element={<><Navigation data={data}/><Home /><Card /><Design /><Footer data={footer} /></>}/>
              <Route path='/Home' element={<><Navigation data={data}/><Home /><Card /><Design /><Footer data={footer} /></>}/>
              <Route path='/SignUpOrLogin' element={<LoginAndSignup/>}/>
-             {!data.isLoggined&&<Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>}
+             {/* {!data.isLoggined&&<Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>} */}
              <><Route path='/Dashboard' element={<><Navigation data={data}/><DashBoard/><Footer data={footer} /></>}/>
              <Route path='/CreateEvent' element={<><Navigation data={data}/><CreateEventPage/><Footer data={footer} /></>}/></>
-             {data.isLoggined&&<Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>}
+             {/* {data.isLoggined&&<Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>} */}
+             <Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>
            </Routes>
          </BrowserRouter>
 
