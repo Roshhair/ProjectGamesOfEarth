@@ -13,7 +13,7 @@ import com.gamesOfEarth.backend.services.EventService;
 public class EventController {
 	@Autowired
 	private EventService eventService;
-	@GetMapping("/get-event")
+	@GetMapping("/get-events")
 	public List<Event> getAllEvents(){
 		return eventService.getAllEvents();
 	}

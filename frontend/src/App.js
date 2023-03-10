@@ -22,6 +22,8 @@ import ExpenseManagement from './Components/ExpenseManagement/ExpenseManagement'
 import Auction from './Components/Auction/Auction';
 import AuctionManager from './Components/AuctionManager/AuctionManager';
 import EventDetails from './Components/EventDetails/EventDetails';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import axios from 'axios';
 
 
 export default class App extends PureComponent {
@@ -67,10 +69,19 @@ export default class App extends PureComponent {
           licss:"footer_list_items",
           acss:"footer_list_links"
         },
-      ]
+      ],
+      events:[]
     }
   }
-
+  getEvents(){
+    axios.get("http://localhost:9000/get-events")
+    .then((res)=>{
+      this.setState({...this.state,events:res.data});
+    })
+    .catch((err)=>{
+      console.log(err);
+    })
+  }
   toggleIsLogined(){
     if(this.state.isLogined){
       this.setState({...this.state,isLogined:false});
@@ -105,32 +116,21 @@ export default class App extends PureComponent {
   
 
   render() {
+    this.getEvents();
     return (
       <>
         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
-        {/* <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} /> */}
-        <Home />
-         <Card />
-        <Design /> 
-        {/* <MatchMaker /> */}
-        {/* <Manager /> */}
-        {/* <ManagerAuc /> */}
-        {/* <Statusbar /> */}
-    
-
-        
-        {/* <DashBoard/> */}
-        {/* <CreateEventPage/> */}
-        {/* <TeamRegistration/> */}
-        {/* <PlayerRegistration/> */}
-        {/* <MatchList/> */}
-        {/* <UpdateMatch/> */}
-        {/* <BudgetEstimation/> */}
-        {/* <ExpenseManagement/> */}
-        {/* <Auction/> */}
-        {/* <AuctionManager/> */}
-        <EventDetails/>
+        <BrowserRouter>
+          <Routes>
+            <Route index element={<><Home /><Card /><Design /></>}/>
+            <Route path='/Home' element={<><Home /><Card /><Design /></>}/>
+            <Route path='/Dashboard' element={<DashBoard/>}/>
+            {this.state.events((event)=>{
+              return(<Route path={`/${event.id}`} element={<Statusbar events={event}/>}/>)
+            })}
+          </Routes>
+        </BrowserRouter>
 
         <Footer data={this.state.footerLinks}/>
       </>

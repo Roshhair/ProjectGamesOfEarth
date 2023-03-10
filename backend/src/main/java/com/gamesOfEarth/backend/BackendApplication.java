@@ -18,6 +18,7 @@ public class BackendApplication {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/post").allowedOrigins("http://localhost:3000");
+				registry.addMapping("/get-events").allowedOrigins("http://localhost:3000");
 			}
 		};
 	}
