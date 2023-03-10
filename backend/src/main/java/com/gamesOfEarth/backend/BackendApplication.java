@@ -27,6 +27,22 @@ public class BackendApplication {
 				registry.addMapping("/get-sports").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/get-event-types").allowedOrigins("http://localhost:3000").allowCredentials(true);
 				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/event-players/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/player-add/{id}").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
+				registry.addMapping("/get-all-features").allowedOrigins("http://localhost:3000").allowCredentials(true);
 			}
 		};
 	}

@@ -32,3 +32,14 @@
     cursor: pointer;
     margin-left: 0.4vw;
 }
+.status_input{
+    margin-left: 0vw;
+    width: 30vw;
+    height: 3vw;
+    font-size: 1.5vw;
+}
+.status_div_color{
+    text-align: center;
+    background-color: #717671;
+    padding: 1vw;
+}

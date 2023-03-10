@@ -1,6 +1,7 @@
 package com.gamesOfEarth.backend.entitybeans;
 
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -29,13 +30,13 @@ public class Team {
 	@JoinTable(name="players_in_teams",
 	joinColumns = @JoinColumn(name="team_id"),
 	inverseJoinColumns = @JoinColumn(name="player_id"))
-	private Set<Player> players;
+	private List<Player> players;
 	@OneToOne(mappedBy = "team")
 	private Manager manager;
 	@OneToMany(mappedBy = "teamOne",fetch = FetchType.LAZY)
-	private Set<Match> matches;
+	private List<Match> matches;
 	@OneToMany(mappedBy = "teamTwo",fetch = FetchType.LAZY)
-	private Set<Match> matches1;
+	private List<Match> matches1;
 	
 	public Team() {
 		// TODO Auto-generated constructor stub
@@ -65,11 +66,11 @@ public class Team {
 		this.event = event;
 	}
 
-	public Set<Player> getPlayers() {
+	public List<Player> getPlayers() {
 		return players;
 	}
 
-	public void setPlayers(Set<Player> players) {
+	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
 
@@ -81,19 +82,19 @@ public class Team {
 		this.manager = manager;
 	}
 
-	public Set<Match> getMatches() {
+	public List<Match> getMatches() {
 		return matches;
 	}
 
-	public void setMatches(Set<Match> matches) {
+	public void setMatches(List<Match> matches) {
 		this.matches = matches;
 	}
 
-	public Set<Match> getMatches1() {
+	public List<Match> getMatches1() {
 		return matches1;
 	}
 
-	public void setMatches1(Set<Match> matches1) {
+	public void setMatches1(List<Match> matches1) {
 		this.matches1 = matches1;
 	}
 
@@ -103,8 +104,8 @@ public class Team {
 				+ manager + ", matches=" + matches + ", matches1=" + matches1 + "]";
 	}
 
-	public Team(int id, String name, Event event, Set<Player> players, Manager manager, Set<Match> matches,
-			Set<Match> matches1) {
+	public Team(int id, String name, Event event, List<Player> players, Manager manager, List<Match> matches,
+			List<Match> matches1) {
 		super();
 		this.id = id;
 		this.name = name;

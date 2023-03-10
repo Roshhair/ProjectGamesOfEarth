@@ -1,7 +1,7 @@
 package com.gamesOfEarth.backend.entitybeans;
 
 import java.sql.Date;
-import java.util.Set;
+import java.util.List;
 
 
 
@@ -41,7 +41,7 @@ public class Event {
 	@JoinTable(name="features_in_events",
 	joinColumns = @JoinColumn(name="event_id"),
 	inverseJoinColumns =  @JoinColumn(name="feature_id"))
-	private Set<Feature> features;
+	private List<Feature> features;
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name="sport_id",nullable = false)
 	private Sport sport;
@@ -52,13 +52,13 @@ public class Event {
 	@JoinTable(name = "players_in_events",
 	joinColumns = @JoinColumn(name="event_id"),
 	inverseJoinColumns = @JoinColumn(name="player_id"))
-	private Set<Player> players;
+	private List<Player> players;
 	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
-	private Set<Team> teams;
+	private List<Team> teams;
 	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
-	private Set<Match> matches;
+	private List<Match> matches;
 	@OneToMany(mappedBy = "event",fetch = FetchType.LAZY)
-	private Set<BudgetEstimation> budgetEstimations;
+	private List<BudgetEstimation> budgetEstimations;
 	@OneToOne(mappedBy = "event")
 	private ManagerEvent managerEvent;
 	public Event() {
@@ -106,10 +106,10 @@ public class Event {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	public Set<Feature> getFeatures() {
+	public List<Feature> getFeatures() {
 		return features;
 	}
-	public void setFeatures(Set<Feature> features) {
+	public void setFeatures(List<Feature> features) {
 		this.features = features;
 	}
 	public Sport getSport() {
@@ -124,28 +124,28 @@ public class Event {
 	public void setEventType(EventType eventType) {
 		this.eventType = eventType;
 	}
-	public Set<Player> getPlayers() {
+	public List<Player> getPlayers() {
 		return players;
 	}
-	public void setPlayers(Set<Player> players) {
+	public void setPlayers(List<Player> players) {
 		this.players = players;
 	}
-	public Set<Team> getTeams() {
+	public List<Team> getTeams() {
 		return teams;
 	}
-	public void setTeams(Set<Team> teams) {
+	public void setTeams(List<Team> teams) {
 		this.teams = teams;
 	}
-	public Set<Match> getMatches() {
+	public List<Match> getMatches() {
 		return matches;
 	}
-	public void setMatches(Set<Match> matches) {
+	public void setMatches(List<Match> matches) {
 		this.matches = matches;
 	}
-	public Set<BudgetEstimation> getBudgetEstimations() {
+	public List<BudgetEstimation> getBudgetEstimations() {
 		return budgetEstimations;
 	}
-	public void setBudgetEstimations(Set<BudgetEstimation> budgetEstimations) {
+	public void setBudgetEstimations(List<BudgetEstimation> budgetEstimations) {
 		this.budgetEstimations = budgetEstimations;
 	}
 	public ManagerEvent getManagerEvent() {
@@ -155,8 +155,8 @@ public class Event {
 		this.managerEvent = managerEvent;
 	}
 	public Event(int id, String name, Date startDate, Date endDate, String venue, int playerRegistrationFee, User user,
-			Set<Feature> features, Sport sport, EventType eventType, Set<Player> players, Set<Team> teams,
-			Set<Match> matches, Set<BudgetEstimation> budgetEstimations, ManagerEvent managerEvent) {
+			List<Feature> features, Sport sport, EventType eventType, List<Player> players, List<Team> teams,
+			List<Match> matches, List<BudgetEstimation> budgetEstimations, ManagerEvent managerEvent) {
 		super();
 		this.id = id;
 		this.name = name;

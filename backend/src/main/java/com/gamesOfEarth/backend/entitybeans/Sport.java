@@ -1,5 +1,6 @@
 package com.gamesOfEarth.backend.entitybeans;
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -17,7 +18,7 @@ public class Sport {
 	@Column
 	private String name;
 	@OneToMany(mappedBy = "sport",fetch = FetchType.LAZY)
-	private Set<Event> events;
+	private List<Event> events;
 	public Sport() {
 		// TODO Auto-generated constructor stub
 	}
@@ -33,17 +34,17 @@ public class Sport {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Set<Event> getEvents() {
+	public List<Event> getEvents() {
 		return events;
 	}
-	public void setEvents(Set<Event> events) {
+	public void setEvents(List<Event> events) {
 		this.events = events;
 	}
 	@Override
 	public String toString() {
 		return "Sport [id=" + id + ", name=" + name + ", events=" + events + "]";
 	}
-	public Sport(int id, String name, Set<Event> events) {
+	public Sport(int id, String name, List<Event> events) {
 		super();
 		this.id = id;
 		this.name = name;

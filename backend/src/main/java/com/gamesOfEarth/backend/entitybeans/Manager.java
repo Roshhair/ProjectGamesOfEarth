@@ -1,5 +1,6 @@
 package com.gamesOfEarth.backend.entitybeans;
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -26,7 +27,7 @@ public class Manager {
 	@JoinColumn(name="team_id",referencedColumnName = "id")
 	private Team team;
 	@OneToMany(mappedBy = "manager",fetch = FetchType.LAZY)
-	private Set<Auction> auctions;
+	private List<Auction> auctions;
 	public Manager() {
 		// TODO Auto-generated constructor stub
 	}
@@ -65,13 +66,13 @@ public class Manager {
 	public void setTeam(Team team) {
 		this.team = team;
 	}
-	public Set<Auction> getAuctions() {
+	public List<Auction> getAuctions() {
 		return auctions;
 	}
-	public void setAuctions(Set<Auction> auctions) {
+	public void setAuctions(List<Auction> auctions) {
 		this.auctions = auctions;
 	}
-	public Manager(int id, String name, int amountToPay, int amountPaid, Team team, Set<Auction> auctions) {
+	public Manager(int id, String name, int amountToPay, int amountPaid, Team team, List<Auction> auctions) {
 		super();
 		this.id = id;
 		this.name = name;

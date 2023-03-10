@@ -1,5 +1,6 @@
 package com.gamesOfEarth.backend.entitybeans;
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -25,13 +26,13 @@ public class Player {
 	@Column
 	private int age;
 	@ManyToMany(mappedBy = "players",fetch = FetchType.LAZY)
-	private Set<Event> events;
+	private List<Event> events;
 	@ManyToMany(mappedBy = "players",fetch = FetchType.LAZY)
-	private Set<Team> teams;
+	private List<Team> teams;
 	@OneToMany(mappedBy = "player",fetch = FetchType.LAZY)
-	private Set<MatchScorer> matcheScorers;
+	private List<MatchScorer> matcheScorers;
 	@OneToMany(mappedBy = "player",fetch = FetchType.LAZY)
-	private Set<Auction> auctions;
+	private List<Auction> auctions;
 	public Player() {
 		// TODO Auto-generated constructor stub
 	}
@@ -71,32 +72,32 @@ public class Player {
 	public void setAge(int age) {
 		this.age = age;
 	}
-	public Set<Event> getEvents() {
+	public List<Event> getEvents() {
 		return events;
 	}
-	public void setEvents(Set<Event> events) {
+	public void setEvents(List<Event> events) {
 		this.events = events;
 	}
-	public Set<Team> getTeams() {
+	public List<Team> getTeams() {
 		return teams;
 	}
-	public void setTeams(Set<Team> teams) {
+	public void setTeams(List<Team> teams) {
 		this.teams = teams;
 	}
-	public Set<MatchScorer> getMatcheScorers() {
+	public List<MatchScorer> getMatcheScorers() {
 		return matcheScorers;
 	}
-	public void setMatcheScorers(Set<MatchScorer> matcheScorers) {
+	public void setMatcheScorers(List<MatchScorer> matcheScorers) {
 		this.matcheScorers = matcheScorers;
 	}
-	public Set<Auction> getAuctions() {
+	public List<Auction> getAuctions() {
 		return auctions;
 	}
-	public void setAuctions(Set<Auction> auctions) {
+	public void setAuctions(List<Auction> auctions) {
 		this.auctions = auctions;
 	}
-	public Player(int id, String name, String email, String phone, String position, int age, Set<Event> events,
-			Set<Team> teams, Set<MatchScorer> matcheScorers, Set<Auction> auctions) {
+	public Player(int id, String name, String email, String phone, String position, int age, List<Event> events,
+			List<Team> teams, List<MatchScorer> matcheScorers, List<Auction> auctions) {
 		super();
 		this.id = id;
 		this.name = name;

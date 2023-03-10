@@ -1,0 +1,18 @@
+.player_list{
+    background-color: rgb(36, 36, 36);
+    padding: 2vw;
+    color: white;
+}
+.player_list_text{
+    text-align: center;
+}
+.player_list_div{
+    border: 0.2vw white solid;
+    padding: 1vw;
+    border-radius: 2vw;
+    height:30vw;
+    overflow-y: auto;
+}
+.player_list_title{
+    font-size: 2vw;
+}

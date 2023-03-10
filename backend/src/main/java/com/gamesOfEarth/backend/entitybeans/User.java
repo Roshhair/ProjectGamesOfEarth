@@ -1,5 +1,6 @@
 package com.gamesOfEarth.backend.entitybeans;
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -23,7 +24,7 @@ public class User {
 	@Column
 	private String password;
 	@OneToMany(mappedBy ="user",fetch = FetchType.LAZY)
-	private Set<Event> events;
+	private List<Event> events;
 	public User() {
 		System.out.println("Constrctor called");
 		// TODO Auto-generated constructor stub
@@ -53,10 +54,10 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Set<Event> getEvents() {
+	public List<Event> getEvents() {
 		return events;
 	}
-	public void setEvents(Set<Event> events) {
+	public void setEvents(List<Event> events) {
 		this.events = events;
 	}
 	@Override
@@ -64,7 +65,7 @@ public class User {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", password=" + password + ", events="
 				+ events + "]";
 	}
-	public User(int id, String name, String email, String password, Set<Event> events) {
+	public User(int id, String name, String email, String password, List<Event> events) {
 		//super();
 		this.id = id;
 		this.name = name;

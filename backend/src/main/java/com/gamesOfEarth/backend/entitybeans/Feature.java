@@ -1,5 +1,6 @@
 package com.gamesOfEarth.backend.entitybeans;
 
+import java.util.List;
 import java.util.Set;
 
 import jakarta.persistence.Column;
@@ -16,7 +17,7 @@ public class Feature {
 	@Column
 	private String name;
 	@ManyToMany(mappedBy = "features",fetch = FetchType.LAZY)
-	private Set<Event> events;
+	private List<Event> events;
 	public Feature() {
 		// TODO Auto-generated constructor stub
 	}
@@ -32,17 +33,17 @@ public class Feature {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Set<Event> getEvents() {
+	public List<Event> getEvents() {
 		return events;
 	}
-	public void setEvents(Set<Event> events) {
+	public void setEvents(List<Event> events) {
 		this.events = events;
 	}
 	@Override
 	public String toString() {
 		return "Feature [id=" + id + ", name=" + name + ", events=" + events + "]";
 	}
-	public Feature(int id, String name, Set<Event> events) {
+	public Feature(int id, String name, List<Event> events) {
 		super();
 		this.id = id;
 		this.name = name;

@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Navigate, useParams } from 'react-router-dom'
+import http from '../axiosHandler'
 import './PlayerRegistration.css'
 
 export default class PlayerRegistration extends Component {
@@ -11,7 +13,8 @@ export default class PlayerRegistration extends Component {
         phone:"",
         age:"",
         agree:false,
-        position:"select"
+        position:"select",
+        redirect:true
       }
     }
     setValues(event) {
@@ -33,13 +36,20 @@ export default class PlayerRegistration extends Component {
     }
     submitHandler(){
         if(this.state.agree){
-            console.log(this.state)
+            http.post(`/player-add/${this.props.id}`,{name:this.state.name,
+            email:this.state.email,
+            phone:this.state.phone,
+            age:this.state.age,position:this.state.position}).then(res=>{
+                if(res.status==200){
+                    this.setState({...this.state,redirect:false})
+                }
+            })
             return;
         }
         alert("YOu Have Agree")
     }
     render() {
-        return (
+        return this.state.redirect?(
             <div className='player_registration'>
                 <div className="col-5 player_registration_div">
                     <div className="player_registration_title">Player Registration</div>
@@ -61,7 +71,10 @@ export default class PlayerRegistration extends Component {
                         <div className='player_registration_input_div'>
                             <select className='player_registration_select' name='position' value={this.state.position} onChange={(event)=>{this.checkBoxHandler(event)}} >
                                 <option disabled value='select'>Select Position</option>
-                                <option value='Rushi'>Rushi</option>
+                                <option value='Rushi'>Defender</option>
+                                <option value='Rushi'>Striker</option>
+                                <option value='Rushi'>MidFielder</option>
+                                <option value='Rushi'>Goal Keeper</option>
                             </select>
                         </div>
                         <div className="player_registration_div_checkbox">
@@ -73,6 +86,6 @@ export default class PlayerRegistration extends Component {
                     </div>
                 </div>
             </div>
-        )
+        ):<Navigate to='/Home'/>
     }
 }

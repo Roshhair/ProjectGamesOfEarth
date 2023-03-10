@@ -5,7 +5,7 @@ import EventDetails from '../EventDetails/EventDetails'
 import ExpenseManagement from '../ExpenseManagement/ExpenseManagement'
 import Manager from '../Manager/Manager'
 import MatchMaker from '../MatchMaker/MatchMaker'
-import PlayerRegistration from '../PlayerRegistration/PlayerRegistration'
+import PlayersList from '../PlayersList/PlayersList'
 import TeamRegistration from '../TeamRegistration/TeamRegistration'
 import UpdateMatch from '../UpdateMatch/UpdateMatch'
 import './Statusbar.css'
@@ -134,7 +134,7 @@ function Statusbar() {
       </div>
       <div className='clearfix '>
           {details&&<EventDetails/>}
-          {players&&<PlayerRegistration/>}
+          {players&&<PlayersList/>}
           {bulkRegistration&&<TeamRegistration/>}
           {managerControl&&<Manager/>}
           {matchMaker&&<MatchMaker/>}
@@ -142,6 +142,9 @@ function Statusbar() {
           {auction&& <AuctionManager/>}
           {budgetEstimation&&<BudgetEstimation/>}
           {expanseTracker&& <ExpenseManagement/>}
+        </div>
+        <div className='status_div_color'>
+          <input type='text' className='status_input' value={`http://localhost:3000/AddPlayer`} disabled/>
         </div>
     </div>
 

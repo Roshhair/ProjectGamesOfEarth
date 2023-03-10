@@ -27,6 +27,8 @@ import http from './Components/axiosHandler'
 import React, { memo, useEffect, useState } from 'react'
 import { ErrorPage } from './Components/ErrorPage/ErrorPage';
 import { EventCasing } from './Components/CreateEvent/EventCasing';
+import PlayersList from './Components/PlayersList/PlayersList';
+import { PlayerRegistrationWrapper } from './Components/PlayerRegistration/PlayerRegistrationWrapper';
 
 const App = () => {
   const [data,setData]=useState({
@@ -84,7 +86,9 @@ const App = () => {
              <Route path='/CreateEvent' element={<><Navigation data={data}/><EventCasing/><Footer data={footer} /></>}/>
              {/* {data.isLoggined&&<Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>} */}
              <Route path='/*' element={<><Navigation data={data}/><ErrorPage/><Footer data={footer} /></>}/>
-             <Route path="/Event" element={<><Navigation data={data}/><Statusbar/><Footer data={footer} /></>}/>
+             <Route path="/Event/" element={<><Navigation data={data}/><Statusbar/><Footer data={footer} /></>}/>
+             {/* Add the path="/Event/:id" */}
+             <Route path="/AddPlayer" element={<PlayerRegistrationWrapper/>}/>
            </Routes>
          </BrowserRouter>
          
@@ -93,129 +97,4 @@ const App = () => {
     </>
   )
 }
-export default React.memo(App)
-// export default class App extends PureComponent {
-//   constructor(props) {
-//     super(props)
-
-//     this.state = {
-//       navbarLinks: [{
-//         id: 1,
-//         name: "About Us",
-//         css:'nav_a nav_text_only nav_li_a_text'
-//       },
-//       {
-//         id: 2,
-//         name: "Docs",
-//         css:'nav_a nav_text_only nav_li_a_text'
-//       },
-//       {
-//         id: 3,
-//         name: "Home",
-//         css:'nav_a nav_text_only nav_li_a_text'
-//       }
-//       ],
-//       footerLinks:[
-//         {
-//           name:"Terms",
-//           id:1,
-//           licss:"footer_list_items",
-//           acss:"footer_list_links"
-//         },
-//         {
-//           name:"Docs",
-//           id:2,
-//           licss:"footer_list_items",
-//           acss:"footer_list_links"
-//         },
-//         {
-//           name:"About Us",
-//           id:3,
-//           licss:"footer_list_items",
-//           acss:"footer_list_links"
-//         },
-//       ],
-//       events:[]
-//     }
-//   }
-//   getEvents(){
-//     http.get("/get-events")
-//     .then((res)=>{
-//       this.setState({...this.state,events:res.data});
-//       // console.log(data)
-//     })
-//     .catch((err)=>{
-//       console.log(err);
-//     })
-//   }
-//   toggleIsLogined(){
-//     if(this.state.isLogined){
-//       this.setState({...this.state,isLogined:false});
-//     }
-//     else{
-//       this.setState({...this.state,isLogined:true});
-//     }
-//   }
-
-//   setShowTrue(){
-//       this.setState({...this.state,show:true});
-//   }
-//   setShowFalse(){
-//     this.setState({...this.state,show:false});
-//     // console.log(false)
-// }
-  
-// componentDidMount(){
-//   // this.getEvents();
-// }
-
-//   navhander(event) {
-
-//     this.setState({
-//       ...this.state,
-//       home: "nav_text",
-//       services: "nav_text",
-//       aboutus: "nav_text",
-//       blog: "nav_text"
-//     });
-//     const data = event.target.name;
-//     console.log(data);
-//     this.setState({ ...this.state, data: "nav_hilighted" })
-//   }
-  
-
-//   render() {
-//     // useEffect(() => {
-//     //   this.getEvents();
-//     // }, [this.state.events])
-//     // this.getEvents()
-
-//     return (
-//       <>
-//         <Navigation data={this.state} toggleIsLogined={()=>{this.toggleIsLogined()}} toggleShow={()=>{this.setShowTrue()}} />
-//         <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />
-//         <BrowserRouter>
-//           <Routes>
-//             {/* <LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} /> */}
-//             {/* <Route path='/' element={<LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}} />}/> */}
-//             <Route index element={<><Home /><Card /><Design /></>}/>
-//             <Route path='/Home' element={<><Home /><Card /><Design /></>}/>
-//             <Route path='/Dashboard' element={<DashBoard/>}/>
-//             <Route path='/CreateEvent' element={<CreateEventPage/>}/>
-//             {/* <Route path='/SignIn' element={<Signin/>}/> */}
-//             {/* <Route path='/SignInSignup' element={()=><LoginAndSignup show={this.state.show} setShowFalse={()=>{this.setShowFalse()}}/>}/> */}
-
-//             {this.state.events.map((event)=>{
-//               return(<Route path={`/${event.id}`} element={<Statusbar events={event}/>}/>)
-//             })}
-//           </Routes>
-//         </BrowserRouter>
-
-//         <Footer data={this.state.footerLinks}/>
-//       </>
-//     )
-//   }
-
-
-
-// }
+export default React.memo(App);
