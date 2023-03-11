@@ -4,7 +4,7 @@ import './Design.css'
 function Design() {
   return (
     <div className='marquee'>
-      <p >GAMES OF EARTH.THE NEXT GENERATION APP</p>
+      <p >GAMES OF EARTH. ONE STOP SOLUTION FOR SPORTS MANAGEMENT</p>
       
       
     </div>
