@@ -6,28 +6,28 @@ import Footer from './Components/Footer/Footer';
 import Home from './Components/Home/Home';
 import Card from './Components/Card/Card';
 import Design from './Components/Design/Design';
-import MatchMaker from './Components/MatchMaker/MatchMaker';
-import Manager from './Components/Manager/Manager';
-import ManagerAuc from './Components/Manager/ManagerAuc';
+// import MatchMaker from './Components/MatchMaker/MatchMaker';
+// import Manager from './Components/Manager/Manager';
+// import ManagerAuc from './Components/Manager/ManagerAuc';
 import Statusbar from './Components/Statusbar/Statusbar';
 import DashBoard from './Components/DashBoard/DashBoard';
-import CreateEventPage from './Components/CreateEvent/CreateEventPage';
-import TeamRegistration from './Components/TeamRegistration/TeamRegistration';
-import PlayerRegistration from './Components/PlayerRegistration/PlayerRegistration';
-import MatchList from './Components/MatchList/MatchList';
-import UpdateMatch from './Components/UpdateMatch/UpdateMatch';
-import BudgetEstimation from './Components/BudgetEstimation/BudgetEstimation';
-import ExpenseManagement from './Components/ExpenseManagement/ExpenseManagement';
+// import CreateEventPage from './Components/CreateEvent/CreateEventPage';
+// import TeamRegistration from './Components/TeamRegistration/TeamRegistration';
+// import PlayerRegistration from './Components/PlayerRegistration/PlayerRegistration';
+// import MatchList from './Components/MatchList/MatchList';
+// import UpdateMatch from './Components/UpdateMatch/UpdateMatch';
+// import BudgetEstimation from './Components/BudgetEstimation/BudgetEstimation';
+// import ExpenseManagement from './Components/ExpenseManagement/ExpenseManagement';
 import Auction from './Components/Auction/Auction';
-import AuctionManager from './Components/AuctionManager/AuctionManager';
-import EventDetails from './Components/EventDetails/EventDetails';
+// import AuctionManager from './Components/AuctionManager/AuctionManager';
+// import EventDetails from './Components/EventDetails/EventDetails';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import http from './Components/axiosHandler'
 
 import React, { memo, useEffect, useState } from 'react'
 import { ErrorPage } from './Components/ErrorPage/ErrorPage';
 import { EventCasing } from './Components/CreateEvent/EventCasing';
-import PlayersList from './Components/PlayersList/PlayersList';
+// import PlayersList from './Components/PlayersList/PlayersList';
 import { PlayerRegistrationWrapper } from './Components/PlayerRegistration/PlayerRegistrationWrapper';
 
 const App = () => {
@@ -89,6 +89,7 @@ const App = () => {
              <Route path="/Event/:id" element={<><Navigation data={data}/><Statusbar/><Footer data={footer} /></>}/>
              {/* Add the path="/Event/:id" */}
              <Route path="/AddPlayer" element={<><Navigation data={data}/><PlayerRegistrationWrapper/><Footer data={footer} /></>}/>
+             <Route path='/Auction' element={<><Navigation data={data}/><Auction/><Footer data={footer} /></>}/>
            </Routes>
          </BrowserRouter>
          

@@ -107,7 +107,7 @@ function Statusbar() {
             setAuction(false);
             setBudgetExtimation(false);
             setExpanseTracker(false)
-          }}>Matchs Adder</button>
+          }}>Matchs Scheduler</button>
           <button className='status_button' onClick={() => {
             setDetails(false);
             setPlayers(false);
@@ -151,7 +151,7 @@ function Statusbar() {
             setAuction(false);
             setBudgetExtimation(false);
             setExpanseTracker(true)
-          }}>expense tracker</button>
+          }}>Expense Management</button>
           {/* <button className='status_button'>expense dashboard</button>
           <button className='status_button'>scoreboard</button> */}
         </div>
